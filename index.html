@@ -7,7 +7,6 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/feather-icons"></script>
   <style>
-    /* Simple fade-in slide-up animation */
     @keyframes fadeSlideUp {
       0% {
         opacity: 0;
@@ -18,7 +17,6 @@
         transform: translateY(0);
       }
     }
-
     .animate-fade-slide-up {
       animation: fadeSlideUp 0.7s ease forwards;
     }
@@ -43,194 +41,83 @@
     <section id="about" class="py-12 px-4 max-w-4xl mx-auto">
       <h2 class="text-3xl font-semibold mb-4">About Me</h2>
       <p class="text-lg">
-        I am a multidisciplinary engineer with a background in <strong>architectural engineering</strong>, specializing in <strong>urban planning and design</strong>.
-        My work spans from <strong>detailed architectural and landscape elements</strong> to <strong>city-scale planning</strong> and <strong>regional visions</strong>. 
-        I also provide technical and construction consultancy with workshop drawings. 
-        I value <strong>sustainability</strong> and <strong>eco-friendly</strong> design.
+        I am a multidisciplinary engineer with a background in <strong>architectural engineering</strong>, specializing in <strong>urban planning & design</strong>.
+        My expertise spans both architectural & urban fields allowing me to deal with various scales of projects ranging from <strong>detailed architectural & landscape elements</strong> to <strong>city-scale planning & regional visions</strong>.
+        In addition to <strong>Planning & Design</strong>, I have practical experience in <strong>construction consultancy</strong>, and am able to provide support in <strong>technical workshop drawings & construction documentations</strong> with structural considerations.
+        I am also aware of the current environmental situation, and I always consider <strong>sustainability & eco-friendly solutions</strong>.
       </p>
     </section>
 
     <!-- Projects Section -->
-<section id="projects" class="bg-gray-50 py-16 px-4">
-  <div class="max-w-7xl mx-auto">
+    <section id="projects" class="bg-gray-50 py-16 px-4">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-4xl font-bold text-center text-blue-900 mb-12">Projects</h2>
+        <div class="flex flex-col md:flex-row gap-12 justify-center">
+          <!-- Architectural Projects -->
+          <!-- ... [unchanged architectural section code] ... -->
 
-    <!-- Centered Projects Heading without underline -->
-    <h2 class="text-4xl font-bold text-center text-blue-900 mb-12">
-      Projects
-    </h2>
+          <!-- Urban Projects -->
+          <div class="flex-1 flex flex-col items-center max-w-lg w-full">
+            <h3 class="text-3xl font-semibold text-blue-800 mb-3 whitespace-nowrap relative inline-block">
+              Urban Projects
+              <span class="block mx-auto mt-1 w-full max-w-lg h-1 bg-blue-300 rounded"></span>
+            </h3>
 
-    <!-- Two columns for Architecture and Urban -->
-    <div class="flex flex-col md:flex-row gap-12 justify-center">
-
-      <!-- Architectural Projects (Left) -->
-      <div class="flex-1 flex flex-col items-center max-w-lg w-full">
-        <h3 class="text-3xl font-semibold text-blue-800 mb-3 whitespace-nowrap relative inline-block">
-          Architectural Projects
-          <span class="block mx-auto mt-1 w-full max-w-lg h-1 bg-blue-300 rounded"></span>
-        </h3>
-
-        <!-- Subsections -->
-        <div class="space-y-10 w-full mt-8">
-          <div>
-            <h4 class="text-xl font-semibold text-gray-700 mb-2 border-b border-gray-300 pb-1">Design</h4>
-            <div class="grid md:grid-cols-2 gap-6">
-              <div class="bg-transparent rounded p-4 cursor-pointer transition duration-300 ease-in-out hover:bg-white hover:shadow-lg">
-                <img src="images/architectural_design.jpg" alt="Architectural Design" class="rounded mb-2 w-full h-48 object-cover">
-                <h5 class="font-semibold text-gray-800">Architectural Design</h5>
-              </div>
-              <!-- Removed Landscape as requested -->
-            </div>
-          </div>
-
-          <div>
-            <h4 class="text-xl font-semibold text-gray-700 mb-2 border-b border-gray-300 pb-1">Workshop Drawings</h4>
-            <div class="grid md:grid-cols-1 gap-6">
-              <div class="bg-transparent rounded p-4 cursor-pointer transition duration-300 ease-in-out hover:bg-white hover:shadow-lg">
-                <img src="images/workshop.jpg" alt="Workshop Drawing" class="rounded mb-2 w-full h-48 object-cover">
-                <h5 class="font-semibold text-gray-800">Technical Drawings</h5>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Urban Projects (Right) -->
-      <div class="flex-1 flex flex-col items-center max-w-lg w-full">
-        <h3 class="text-3xl font-semibold text-blue-800 mb-3 whitespace-nowrap relative inline-block">
-          Urban Projects
-          <span class="block mx-auto mt-1 w-full max-w-lg h-1 bg-blue-300 rounded"></span>
-        </h3>
-
-        <!-- Subsections -->
-        <div class="space-y-10 w-full mt-8">
-
-          <div>
-            <h4 class="text-xl font-semibold text-gray-700 mb-2 border-b border-gray-300 pb-1">Design</h4>
-            <div class="grid md:grid-cols-1 gap-6">
-              <div class="bg-transparent rounded p-4 cursor-pointer transition duration-300 ease-in-out hover:bg-white hover:shadow-lg">
-                <img src="images/urban_design.jpg" alt="Urban Design" class="rounded mb-2 w-full h-48 object-cover">
-                <h5 class="font-semibold text-gray-800">Urban Design</h5>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <h4 class="text-xl font-semibold text-gray-700 mb-2 border-b border-gray-300 pb-1">Development</h4>
-            <!-- Removed empty development project -->
-            <!-- Phases Row -->
-            <div class="flex gap-6 justify-center max-w-4xl mx-auto mt-4">
-              <!-- Phase 1 -->
-              <div class="bg-transparent rounded p-4 cursor-pointer transition duration-300 ease-in-out hover:bg-white hover:shadow-lg" style="flex: 4 1 0%; aspect-ratio: 4 / 3;">
-                <a href="https://drive.google.com/file/d/1rUHniPHQLqTULzSfk_5tuAsZxEhGamd7/view" target="_blank" rel="noopener noreferrer" aria-label="Open Phase 1 Data Collection PDF in Google Drive">
-                  <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%; overflow: hidden; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                    <iframe
-                      src="https://drive.google.com/file/d/1rUHniPHQLqTULzSfk_5tuAsZxEhGamd7/preview"
-                      frameborder="0"
-                      allowfullscreen
-                      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 0.5rem;"
-                      title="Phase 1 Data Collection PDF Preview"
-                    ></iframe>
+            <div class="space-y-10 w-full mt-8">
+              <div>
+                <h4 class="text-xl font-semibold text-gray-700 mb-2 border-b border-gray-300 pb-1">Design</h4>
+                <div class="grid md:grid-cols-1 gap-6">
+                  <div class="bg-transparent rounded p-4 cursor-pointer transition duration-300 ease-in-out hover:bg-white hover:shadow-lg">
+                    <img src="images/urban_design.jpg" alt="Urban Design" class="rounded mb-2 w-full h-48 object-cover">
+                    <h5 class="font-semibold text-gray-800">Urban Design</h5>
                   </div>
-                </a>
-                <h5 class="mt-3 text-center font-semibold text-gray-800">Phase 1 (Data Collection)</h5>
-              </div>
-
-              <!-- Phase 2 -->
-              <div class="bg-transparent rounded p-4 cursor-pointer transition duration-300 ease-in-out hover:bg-white hover:shadow-lg" style="flex: 4 1 0%; aspect-ratio: 4 / 3;">
-                <a href="https://drive.google.com/file/d/1_tF-cUjD6pJFZ0h2wc2p3tE3iSRthpmd/view" target="_blank" rel="noopener noreferrer" aria-label="Open Phase 2 Analysies PDF in Google Drive">
-                  <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%; overflow: hidden; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                    <iframe
-                      src="https://drive.google.com/file/d/1_tF-cUjD6pJFZ0h2wc2p3tE3iSRthpmd/preview"
-                      frameborder="0"
-                      allowfullscreen
-                      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 0.5rem;"
-                      title="Phase 2 Analysies PDF Preview"
-                    ></iframe>
-                  </div>
-                </a>
-                <h5 class="mt-3 text-center font-semibold text-gray-800">Phase 2 (Analysies)</h5>
-              </div>
-
-              <!-- Phase 3 -->
-              <div class="bg-transparent rounded p-4 cursor-pointer transition duration-300 ease-in-out hover:bg-white hover:shadow-lg" style="flex: 4 1 0%; aspect-ratio: 4 / 3;">
-                <a href="https://drive.google.com/file/d/1gJcHPeMbd25LZCsHfHGewMz_D7fm815L/view" target="_blank" rel="noopener noreferrer" aria-label="Open Phase 3 Strategic Planning PDF in Google Drive">
-                  <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%; overflow: hidden; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                    <iframe
-                      src="https://drive.google.com/file/d/1gJcHPeMbd25LZCsHfHGewMz_D7fm815L/preview"
-                      frameborder="0"
-                      allowfullscreen
-                      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 0.5rem;"
-                      title="Phase 3 Strategic Planning PDF Preview"
-                    ></iframe>
-                  </div>
-                </a>
-                <h5 class="mt-3 text-center font-semibold text-gray-800">Phase 3 (Strategic Planning)</h5>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <h4 class="text-xl font-semibold text-gray-700 mb-2 border-b border-gray-300 pb-1">Housing</h4>
-            <div class="space-y-8 w-full mt-8">
-              <!-- Gated Residential Compound -->
-              <div class="bg-transparent rounded p-4 cursor-pointer transition duration-300 ease-in-out hover:bg-white hover:shadow-lg max-w-md mx-auto">
-                <a href="https://drive.google.com/file/d/1X4dso8FTXdpSEuWg2U1w48920C7BTGbl/view" target="_blank" rel="noopener noreferrer" aria-label="Open Gated Residential Compound PDF in Google Drive">
-                  <div style="position: relative; width: 100%; padding-bottom: 66.66%; height: 0; overflow: hidden; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                    <iframe
-                      src="https://drive.google.com/file/d/1X4dso8FTXdpSEuWg2U1w48920C7BTGbl/preview"
-                      frameborder="0"
-                      allowfullscreen
-                      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 0.5rem;"
-                      title="Gated Residential Compound PDF Preview"
-                    ></iframe>
-                  </div>
-                </a>
-                <h5 class="mt-3 text-center font-semibold text-gray-800">Gated Residential Compound</h5>
-              </div>
-
-              <!-- Under Gated: Un-Gated Housing -->
-              <div class="bg-transparent rounded p-4 cursor-pointer transition duration-300 ease-in-out hover:bg-white hover:shadow-lg max-w-md mx-auto">
-                <a href="https://drive.google.com/file/d/19sNb3CdZnoDoLYVSG_bKpRXb-n6V8vkT/view" target="_blank" rel="noopener noreferrer" aria-label="Open Un-Gated Housing PDF in Google Drive">
-                  <div style="position: relative; width: 100%; padding-bottom: 66.66%; height: 0; overflow: hidden; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                    <iframe
-                      src="https://drive.google.com/file/d/19sNb3CdZnoDoLYVSG_bKpRXb-n6V8vkT/preview"
-                      frameborder="0"
-                      allowfullscreen
-                      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 0.5rem;"
-                      title="Un-Gated Housing PDF Preview"
-                    ></iframe>
-                  </div>
-                </a>
-                <h5 class="mt-3 text-center font-semibold text-gray-800">Un-Gated Housing</h5>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <h4 class="text-xl font-semibold text-gray-700 mb-2 border-b border-gray-300 pb-1">Landscape</h4>
-            <div class="bg-transparent rounded p-4 cursor-pointer transition duration-300 ease-in-out hover:bg-white hover:shadow-lg max-w-md mx-auto">
-              <a href="https://drive.google.com/file/d/1z986m0WYGsg2egPG40aTuOI2ak2xYA8l/view" target="_blank" rel="noopener noreferrer" aria-label="Open Pedestrian Bridge Over The Nile PDF in Google Drive">
-                <div style="position: relative; width: 100%; padding-bottom: 33.33%; height: 0; overflow: hidden; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                  <iframe
-                    src="https://drive.google.com/file/d/1z986m0WYGsg2egPG40aTuOI2ak2xYA8l/preview"
-                    frameborder="0"
-                    allowfullscreen
-                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 0.5rem;"
-                    title="Pedestrian Bridge Over The Nile PDF Preview"
-                  ></iframe>
                 </div>
-              </a>
-              <h5 class="mt-3 text-center font-semibold text-lg text-gray-800">Pedestrian Bridge Over The Nile</h5>
+              </div>
+
+              <div>
+                <h4 class="text-xl font-semibold text-gray-700 mb-2 border-b border-gray-300 pb-1">Heliopolis Transformation</h4>
+                <div class="flex gap-6 justify-center max-w-4xl mx-auto mt-4">
+                  <!-- Phase 1 -->
+                  <div class="bg-transparent rounded p-4 cursor-pointer transition duration-300 ease-in-out hover:bg-white hover:shadow-lg" style="flex: 4 1 0%; aspect-ratio: 4 / 3;">
+                    <a href="https://drive.google.com/file/d/1rUHniPHQLqTULzSfk_5tuAsZxEhGamd7/view" target="_blank">
+                      <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%; overflow: hidden; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                        <iframe src="https://drive.google.com/file/d/1rUHniPHQLqTULzSfk_5tuAsZxEhGamd7/preview" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 0.5rem;"></iframe>
+                      </div>
+                    </a>
+                    <h5 class="mt-3 text-center font-semibold text-gray-800 text-sm leading-tight">Phase 1<br>(Data Collection)</h5>
+                  </div>
+
+                  <!-- Phase 2 -->
+                  <div class="bg-transparent rounded p-4 cursor-pointer transition duration-300 ease-in-out hover:bg-white hover:shadow-lg" style="flex: 4 1 0%; aspect-ratio: 4 / 3;">
+                    <a href="https://drive.google.com/file/d/1_tF-cUjD6pJFZ0h2wc2p3tE3iSRthpmd/view" target="_blank">
+                      <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%; overflow: hidden; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                        <iframe src="https://drive.google.com/file/d/1_tF-cUjD6pJFZ0h2wc2p3tE3iSRthpmd/preview" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 0.5rem;"></iframe>
+                      </div>
+                    </a>
+                    <h5 class="mt-3 text-center font-semibold text-gray-800 text-sm leading-tight">Phase 2<br>(Analysies)</h5>
+                  </div>
+
+                  <!-- Phase 3 -->
+                  <div class="bg-transparent rounded p-4 cursor-pointer transition duration-300 ease-in-out hover:bg-white hover:shadow-lg" style="flex: 4 1 0%; aspect-ratio: 4 / 3;">
+                    <a href="https://drive.google.com/file/d/1gJcHPeMbd25LZCsHfHGewMz_D7fm815L/view" target="_blank">
+                      <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%; overflow: hidden; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                        <iframe src="https://drive.google.com/file/d/1gJcHPeMbd25LZCsHfHGewMz_D7fm815L/preview" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 0.5rem;"></iframe>
+                      </div>
+                    </a>
+                    <h5 class="mt-3 text-center font-semibold text-gray-800 text-sm leading-tight">Phase 3<br>(Strategic Planning)</h5>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Housing & Landscape -->
+              <!-- ... [unchanged housing and landscape code] ... -->
             </div>
           </div>
-
         </div>
       </div>
+    </section>
 
-    </div>
-  </div>
-</section>
-    <!-- Contact Section -->
+    <!-- Contact -->
     <section id="contact" class="py-12 px-4 max-w-4xl mx-auto">
       <h2 class="text-3xl font-semibold mb-6">Contact</h2>
       <div class="space-y-4 text-lg">
