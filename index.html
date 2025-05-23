@@ -1,24 +1,209 @@
-Abdallah Khaled | Portfolio @keyframes fadeSlideUp { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } } .animate-fade-slide-up { animation: fadeSlideUp 0.7s ease forwards; } 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abdallah Khaled | Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <style>
+    /* Simple fade-in slide-up animation */
+    @keyframes fadeSlideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-Abdallah Khaled About Projects Contact 
+    .animate-fade-slide-up {
+      animation: fadeSlideUp 0.7s ease forwards;
+    }
 
-About Me 
+    /* Project card styling for consistency */
+    .project-card {
+      background-color: #ffffff;
+      border-radius: 0.5rem; /* rounded-lg */
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+      padding: 1rem; /* p-4 */
+      transition: all 0.3s ease; /* transition */
+      cursor: pointer;
+    }
 
-I am a multidisciplinary engineer with a background in architectural engineering, specializing in urban planning and design. My work spans from detailed architectural and landscape elements to city-scale planning and regional visions. I also provide technical and construction consultancy with workshop drawings. I value sustainability and eco-friendly design. 
+    .project-card:hover {
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* hover:shadow-lg */
+      transform: translateY(-3px); /* Subtle lift on hover */
+    }
 
-Projects 
+    .project-card img {
+      border-radius: 0.375rem; /* rounded */
+      margin-bottom: 0.5rem; /* mb-2 */
+      width: 100%;
+      height: 12rem; /* h-48, fixed height for consistency */
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800 font-sans">
 
-<!-- Architectural Projects --> <div class="flex-1"> <h3 class="text-3xl font-semibold text-center text-blue-800 mb-2">Architecture</h3> <div class="w-2/3 h-1 bg-blue-300 mx-auto mb-6"></div> <div class="space-y-10"> <div> <h4 class="text-xl font-semibold text-gray-700 mb-2 border-b border-gray-300 pb-1">Design</h4> <div class="grid gap-6"> <div class="bg-white rounded shadow p-4 hover:shadow-lg"> <img src="images/architectural_design.jpg" class="rounded mb-2 w-full h-48 object-cover" alt="Design"> <h5 class="font-semibold">Architectural Design</h5> </div> </div> </div> <div> <h4 class="text-xl font-semibold text-gray-700 mb-2 border-b border-gray-300 pb-1">Workshop Drawings</h4> <div class="grid gap-6"> <div class="bg-white rounded shadow p-4 hover:shadow-lg"> <img src="images/workshop.jpg" class="rounded mb-2 w-full h-48 object-cover" alt="Workshop"> <h5 class="font-semibold">Technical Drawings</h5> </div> </div> </div> </div> </div> <!-- Urban Projects --> <div class="flex-1"> <h3 class="text-3xl font-semibold text-center text-blue-800 mb-2">Urban</h3> <div class="w-2/3 h-1 bg-blue-300 mx-auto mb-6"></div> <div class="space-y-10"> <div> <h4 class="text-xl font-semibold text-gray-700 mb-2 border-b border-gray-300 pb-1">Landscape</h4> <div class="space-y-6"> <div class="bg-white rounded shadow p-4"> <a href="https://drive.google.com/file/d/1z986m0WYGsg2egPG40aTuOI2ak2xYA8l/view" target="_blank"> <div class="relative w-full pb-[33.33%] overflow-hidden rounded shadow"> <iframe src="https://drive.google.com/file/d/1z986m0WYGsg2egPG40aTuOI2ak2xYA8l/preview" frameborder="0" allowfullscreen class="absolute top-0 left-0 w-full h-full"></iframe> </div> </a> <h5 class="mt-3 text-center font-semibold text-lg">Pedestrian Bridge Over The Nile</h5> </div> <div class="bg-white rounded shadow p-4"> <a href="https://drive.google.com/file/d/1KcanhuMZgeDr8_OG7T8qcpHErjt2rbOL/view" target="_blank"> <div class="relative w-full pb-[75%] overflow-hidden rounded shadow"> <iframe src="https://drive.google.com/file/d/1KcanhuMZgeDr8_OG7T8qcpHErjt2rbOL/preview" frameborder="0" allowfullscreen class="absolute top-0 left-0 w-full h-full"></iframe> </div> </a> <h5 class="mt-3 text-center font-semibold text-lg">Renovation of the International Park</h5> </div> </div> </div> <div> <h4 class="text-xl font-semibold text-gray-700 mb-2 border-b border-gray-300 pb-1">Housing</h4> <div class="space-y-6"> <div class="bg-white rounded shadow p-4"> <a href="https://drive.google.com/file/d/1X4dso8FTXdpSEuWg2U1w48920C7BTGbl/view" target="_blank"> <div class="relative w-full pb-[75%] overflow-hidden rounded shadow"> <iframe src="https://drive.google.com/file/d/1X4dso8FTXdpSEuWg2U1w48920C7BTGbl/preview" frameborder="0" allowfullscreen class="absolute top-0 left-0 w-full h-full"></iframe> </div> </a> <h5 class="mt-3 text-center font-semibold text-lg">Gated Residential Compound</h5> </div> <div class="bg-white rounded shadow p-4"> <a href="https://drive.google.com/file/d/19sNb3CdZnoDoLYVSG_bKpRXb-n6V8vkT/view" target="_blank"> <div class="relative w-full pb-[75%] overflow-hidden rounded shadow"> <iframe src="https://drive.google.com/file/d/19sNb3CdZnoDoLYVSG_bKpRXb-n6V8vkT/preview" frameborder="0" allowfullscreen class="absolute top-0 left-0 w-full h-full"></iframe> </div> </a> <h5 class="mt-3 text-center font-semibold text-lg">Ungated Residential Compound</h5> </div> </div> </div> </div> </div> </div> 
+<header class="bg-blue-50 p-6 shadow-md animate-fade-slide-up">
+  <div class="max-w-6xl mx-auto flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-blue-900">Abdallah Khaled</h1>
+    <nav class="space-x-6 text-blue-700">
+      <a href="#about" class="hover:underline">About</a>
+      <a href="#projects" class="hover:underline">Projects</a>
+      <a href="#contact" class="hover:underline">Contact</a>
+    </nav>
+  </div>
+</header>
 
-Contact 
+<section id="about" class="py-12 px-4 max-w-4xl mx-auto animate-fade-slide-up">
+  <h2 class="text-3xl font-semibold mb-4 text-center">About Me</h2>
+  <p class="text-lg text-center">
+    I am a multidisciplinary engineer with a background in **architectural engineering**, specializing in **urban planning and design**.
+    My work spans from **detailed architectural and landscape elements** to **city-scale planning** and **regional visions**.
+    I also provide technical and construction consultancy with workshop drawings.
+    I value **sustainability** and **eco-friendly** design.
+  </p>
+</section>
 
-your.email@example.com 
+<section id="projects" class="bg-gray-50 py-16 px-4">
+  <div class="max-w-7xl mx-auto">
 
-linkedin.com/in/yourname 
+    <h2 class="text-4xl font-bold text-center text-blue-900 mb-12 animate-fade-slide-up">
+      Projects
+    </h2>
 
-WhatsApp Me 
+    <div class="flex flex-col md:flex-row gap-12 justify-center">
 
-© 2025 Abdallah Khaled. All rights reserved.
+      <div class="flex-1 flex flex-col items-center max-w-lg w-full animate-fade-slide-up">
+        <h3 class="text-3xl font-semibold text-blue-800 mb-3 whitespace-nowrap relative inline-block">
+          Architectural Projects
+          <span class="block mx-auto mt-1 w-full max-w-lg h-1 bg-blue-300 rounded"></span>
+        </h3>
 
-feather.replace(); 
+        <div class="space-y-10 w-full mt-8">
+          <div>
+            <h4 class="text-xl font-semibold text-gray-700 mb-2 border-b border-gray-300 pb-1">Design</h4>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="project-card">
+                <img src="images/architectural_design.jpg" alt="Architectural Design">
+                <h5 class="font-semibold text-gray-800">Architectural Design</h5>
+              </div>
+              <div class="project-card">
+                <img src="images/landscape.jpg" alt="Landscape Design">
+                <h5 class="font-semibold text-gray-800">Landscape Design</h5>
+              </div>
+            </div>
+          </div>
 
+          <div>
+            <h4 class="text-xl font-semibold text-gray-700 mb-2 border-b border-gray-300 pb-1">Workshop Drawings</h4>
+            <div class="grid md:grid-cols-1 gap-6">
+              <div class="project-card">
+                <img src="images/workshop.jpg" alt="Workshop Drawing">
+                <h5 class="font-semibold text-gray-800">Technical Drawings</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-1 flex flex-col items-center max-w-lg w-full animate-fade-slide-up">
+        <h3 class="text-3xl font-semibold text-blue-800 mb-3 whitespace-nowrap relative inline-block">
+          Urban Projects
+          <span class="block mx-auto mt-1 w-full max-w-lg h-1 bg-blue-300 rounded"></span>
+        </h3>
+
+        <div class="space-y-10 w-full mt-8">
+          <div>
+            <h4 class="text-xl font-semibold text-gray-700 mb-2 border-b border-gray-300 pb-1">Design</h4>
+            <div class="grid md:grid-cols-1 gap-6">
+              <div class="project-card">
+                <img src="images/urban_design.jpg" alt="Urban Design">
+                <h5 class="font-semibold text-gray-800">Urban Design</h5>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-xl font-semibold text-gray-700 mb-2 border-b border-gray-300 pb-1">Development</h4>
+            <div class="grid md:grid-cols-1 gap-6">
+              <div class="project-card">
+                <img src="images/regeneration.jpg" alt="Urban Development">
+                <h5 class="font-semibold text-gray-800">Urban Development & Regeneration</h5>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-xl font-semibold text-gray-700 mb-2 border-b border-gray-300 pb-1">Housing</h4>
+            <div class="grid md:grid-cols-1 gap-6">
+              <div class="project-card">
+                <img src="images/housing.jpg" alt="Urban Housing">
+                <h5 class="font-semibold text-gray-800">Urban Housing</h5>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-xl font-semibold text-gray-700 mb-2 border-b border-gray-300 pb-1">Landscape</h4>
+            <div class="project-card max-w-md mx-auto">
+              <a href="https://drive.google.com/file/d/1z986m0WYGsg2egPG40aTuOI2ak2xYA8l/view" target="_blank" rel="noopener noreferrer" aria-label="Open Pedestrian Bridge Over The Nile PDF in Google Drive">
+                <div style="position: relative; width: 100%; padding-bottom: 33.33%; height: 0; overflow: hidden; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                  <iframe
+                    src="https://drive.google.com/file/d/1z986m0WYGsg2egPG40aTuOI2ak2xYA8l/preview"
+                    frameborder="0"
+                    allowfullscreen
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 0.5rem;"
+                    title="Pedestrian Bridge Over The Nile PDF Preview"
+                  ></iframe>
+                </div>
+              </a>
+              <h5 class="mt-3 text-center font-semibold text-lg text-gray-800">Pedestrian Bridge Over The Nile</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section id="contact" class="py-12 px-4 max-w-4xl mx-auto animate-fade-slide-up">
+  <h2 class="text-3xl font-semibold mb-6 text-center">Contact</h2>
+  <div class="space-y-4 text-lg text-center">
+    <p class="flex items-center justify-center space-x-2">
+      <i data-feather="mail" class="text-blue-600"></i>
+      <a href="mailto:your.email@example.com" class="text-blue-600 hover:underline">your.email@example.com</a>
+    </p>
+    <p class="flex items-center justify-center space-x-2">
+      <i data-feather="linkedin" class="text-blue-600"></i>
+      <a href="https://linkedin.com/in/yourname" class="text-blue-600 hover:underline" target="_blank">linkedin.com/in/yourname</a>
+    </p>
+    <p class="flex items-center justify-center space-x-2">
+      <i data-feather="message-circle" class="text-green-600"></i>
+      <a href="https://wa.me/201234567890" class="text-green-600 hover:underline" target="_blank">WhatsApp Me</a>
+    </p>
+  </div>
+</section>
+
+<footer class="bg-blue-50 text-center py-4 mt-10 text-sm text-gray-700 animate-fade-slide-up">
+  <p>&copy; 2025 Abdallah Khaled. All rights reserved.</p>
+</footer>
+
+<script>
+  feather.replace();
+
+  // Add animate-fade-slide-up class to sections on load for animation
+  document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('section, header, footer');
+    sections.forEach(section => {
+      section.classList.add('animate-fade-slide-up');
+    });
+  });
+</script>
+</body>
+</html>
