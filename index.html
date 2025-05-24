@@ -34,6 +34,7 @@
       width: 100%;
       height: 100%;
       background-color: rgba(0,0,0,0.7);
+      /* overflow: auto; Removed, as modal-content handles its own overflow */
       transition: opacity 0.3s ease-out, visibility 0s linear 0.3s; /* Delay visibility change for fade-out */
     }
 
@@ -45,25 +46,28 @@
     
     .modal-content {
       background-color: white;
-      margin: auto;
+      margin: auto; /* Works with absolute positioning for centering if L/R/T/B are 0, but top/left/transform is more direct */
       padding: 20px;
       border-radius: 8px;
       width: 80%;
       max-width: 600px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       position: absolute;
-      top: 50%; /* Modal content target center */
-      left: 50%; /* Modal content target center */
+      top: 50%;
+      left: 50%;
+      /* transform: translate(-50%, -50%); Original centering */
+      transform: translate(-50%, -50%) scale(0.7); /* Initial state for animation: smaller */
+      opacity: 0; /* Initial state for animation: invisible */
       max-height: 80vh;
       overflow-y: auto;
-      
-      /* Initial transform and opacity will be set by JS inline. */
-      /* This defines the final state that JS animates to: */
-      transform: translate(-50%, -50%) scale(1); 
-      opacity: 1;
+      transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+      /* Optional: add a slight delay for content animation if desired */
+      /* transition-delay: 0.05s; */ 
+    }
 
-      /* Keep these transitions for the animation from initial JS state to final CSS state */
-      transition: transform 0.3s ease-out, opacity 0.3s ease-out; 
+    .modal.modal-open .modal-content {
+      transform: translate(-50%, -50%) scale(1); /* Final state: full size */
+      opacity: 1; /* Final state: fully visible */
     }
     
     .close {
@@ -86,7 +90,7 @@
     <div id="projectModal" class="modal">
       <div class="modal-content">
         <span class="close">×</span>
-        <div id="modalInnerContent"></div> 
+        <div id="modalInnerContent"></div> <!-- Changed ID slightly for clarity from potential confusion -->
       </div>
     </div>
     
@@ -318,19 +322,16 @@
     
     // Modal functionality
     const modal = document.getElementById("projectModal");
-    const modalInnerDiv = document.getElementById("modalInnerContent");
-    const modalContentDiv = modal.querySelector(".modal-content"); // Get the actual content box
-    const closeBtn = modal.querySelector(".close");
+    const modalInnerDiv = document.getElementById("modalInnerContent"); // Target for dynamic content
+    const closeBtn = modal.querySelector(".close"); // More specific selector
     const projectItems = document.querySelectorAll(".project-item");
-
-    // Variables to store the initial transform for reverse animation on close
-    let lastItemInitialTransform = '';
-    let lastItemInitialOpacity = '';
     
     projectItems.forEach(item => {
       item.addEventListener("click", function(e) {
-        // Prevent modal opening if clicking on an interactive element like a link/iframe directly inside the item
+        // Prevent modal opening if clicking on an interactive element like a link/iframe directly
         if (e.target.tagName === 'A' || e.target.closest('a') || e.target.tagName === 'IFRAME') {
+            // If the click is on a link or iframe, or inside a link, let the default browser action occur (e.g., navigation)
+            // and do not open the modal.
             return; 
         }
         
@@ -345,6 +346,7 @@
         `;
         
         if (image) {
+          // Adjusted image class for better display in modal
           content += `<img src="${image}" alt="${title}" class="w-full max-h-72 object-contain mb-4 rounded">`;
         }
         
@@ -353,90 +355,20 @@
         }
         
         modalInnerDiv.innerHTML = content;
-
-        // 1. Temporarily make the modal content visible (but backdrop hidden)
-        // to get its final dimensions accurately after content is loaded.
-        modalContentDiv.style.transition = 'none'; // Disable transitions for measurement
-        modalContentDiv.style.top = '50%'; // Position for measurement
-        modalContentDiv.style.left = '50%'; // Position for measurement
-        modalContentDiv.style.transform = 'translate(-50%, -50%) scale(1)'; // Ensure final scale for measurement
-        modalContentDiv.style.opacity = '0'; // Keep content hidden
-        modal.style.visibility = 'hidden'; // Keep backdrop hidden
-        modal.classList.add('modal-open'); // Add class to apply final CSS (e.g., max-width) for accurate measurement
-        
-        // Force reflow to ensure styles are applied for accurate getBoundingClientRect
-        void modalContentDiv.offsetWidth; 
-        
-        const finalModalRect = modalContentDiv.getBoundingClientRect(); // Get actual dimensions and position
-
-        // 2. Calculate initial transform values based on clicked item and final modal dimensions
-        const itemRect = this.getBoundingClientRect(); // Dimensions of the clicked project item
-        const itemCenterX = itemRect.left + itemRect.width / 2;
-        const itemCenterY = itemRect.top + itemRect.height / 2;
-
-        const modalFinalCenterX = finalModalRect.left + finalModalRect.width / 2;
-        const modalFinalCenterY = finalModalRect.top + finalModalRect.height / 2;
-
-        // Calculate the translation needed to move the modal's center from its final position to the item's center
-        const initialTx = itemCenterX - modalFinalCenterX;
-        const initialTy = itemCenterY - modalFinalCenterY;
-
-        // Calculate scale based on the smaller dimension ratio, adjusted slightly
-        const initialScale = Math.min(itemRect.width / finalModalRect.width, itemRect.height / finalModalRect.height) * 0.9; // 0.9 factor makes it slightly smaller than the item
-        const clampedInitialScale = Math.max(initialScale, 0.01); // Ensure it's not too tiny or zero
-        
-        // 3. Apply the calculated initial transform and opacity for the start of the animation
-        modalContentDiv.style.transform = `translate(-50%, -50%) translate(${initialTx}px, ${initialTy}px) scale(${clampedInitialScale})`;
-        modalContentDiv.style.opacity = '0'; 
-        modalContentDiv.style.transition = 'transform 0.3s ease-out, opacity 0.3s ease-out'; // Re-enable transitions
-        
-        // Store these initial properties for closing animation
-        lastItemInitialTransform = modalContentDiv.style.transform;
-        lastItemInitialOpacity = '0'; // It will animate back to 0 opacity
-
-        // 4. Trigger the animation to the final state
-        requestAnimationFrame(() => {
-            modal.style.visibility = 'visible'; // Show the modal backdrop
-            // The modal.classList.add('modal-open') is already set.
-            // Now, we reset the transform and opacity to let the CSS rule take over
-            // which animates it to transform: translate(-50%, -50%) scale(1) and opacity: 1
-            modalContentDiv.style.transform = `translate(-50%, -50%) scale(1)`; 
-            modalContentDiv.style.opacity = '1';
-        });
+        modal.classList.add("modal-open"); // Show modal with animation
         document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
       });
     });
     
-    // Close button and backdrop click logic
-    const closeAndResetModal = () => {
-      const transitionDuration = 300; // milliseconds, matches CSS transition
-
-      // Ensure transitions are active for the reverse animation
-      modalContentDiv.style.transition = 'transform 0.3s ease-out, opacity 0.3s ease-out';
-      
-      // Animate modal content back to its initial position and opacity
-      modalContentDiv.style.transform = lastItemInitialTransform;
-      modalContentDiv.style.opacity = lastItemInitialOpacity;
-
-      // After the animation completes, fully hide the modal and clean up inline styles
-      setTimeout(() => {
-        modal.classList.remove('modal-open'); // Hide the modal backdrop
-        document.body.style.overflow = "auto"; // Re-enable scrolling
-
-        // Clear inline styles to reset for next open
-        modalContentDiv.style.transform = '';
-        modalContentDiv.style.opacity = '';
-        modalContentDiv.style.transition = '';
-        modalContentDiv.style.top = ''; // Clear temporary top/left if any
-        modalContentDiv.style.left = '';
-      }, transitionDuration);
-    };
-
-    closeBtn.addEventListener("click", closeAndResetModal);
+    closeBtn.addEventListener("click", function() {
+      modal.classList.remove("modal-open"); // Hide modal with animation
+      document.body.style.overflow = "auto"; // Re-enable scrolling
+    });
     
     window.addEventListener("click", function(event) {
       if (event.target == modal) { // Clicked on the modal backdrop
-        closeAndResetModal();
+        modal.classList.remove("modal-open"); // Hide modal with animation
+        document.body.style.overflow = "auto"; // Re-enable scrolling
       }
     });
   </script>  
