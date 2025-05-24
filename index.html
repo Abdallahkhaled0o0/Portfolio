@@ -92,6 +92,28 @@
       text-overflow: ellipsis;
       max-width: 100%;
     }
+
+    /* Project card styling */
+    .project-card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin-top: 8px;
+    }
+
+    /* Phase link styling */
+    .phase-link {
+      display: block;
+      padding: 8px 12px;
+      margin: 4px 0;
+      color: #0369a1;
+      transition: background-color 0.2s;
+      border-radius: 4px;
+    }
+    .phase-link:hover {
+      background-color: #f0f9ff;
+      text-decoration: none;
+    }
   </style>  
 </head>  
 <body class="bg-white text-gray-800 font-sans">  
@@ -260,7 +282,7 @@
             </div>  
 
             <!-- Heliopolis Transformation Project Card -->
-            <div class="bg-transparent rounded p-4 cursor-pointer transition duration-300 ease-in-out hover:bg-white hover:shadow-lg max-w-md mx-auto project-item mt-8" 
+            <div class="project-card p-4 cursor-pointer transition duration-300 ease-in-out hover:shadow-md project-item mt-2" 
                  data-title="Heliopolis Transformation" 
                  data-description="A comprehensive urban development project consisting of three phases: data collection, analysis, and strategic planning for the Heliopolis district.">
               <h5 class="text-center font-semibold text-lg text-gray-800">Heliopolis Transformation</h5>
@@ -371,11 +393,28 @@
           <p class="mb-4">${description}</p>
         `;
         
+        // Special content for Heliopolis Transformation
+        if (title === "Heliopolis Transformation") {
+          content += `
+            <div class="space-y-2 mt-4">
+              <a href="https://drive.google.com/file/d/1rUHniPHQLqTULzSfk_5tuAsZxEhGamd7/view" target="_blank" class="phase-link">
+                Phase 1: Data Collection
+              </a>
+              <a href="https://drive.google.com/file/d/1_tF-cUjD6pJFZ0h2wc2p3tE3iSRthpmd/view" target="_blank" class="phase-link">
+                Phase 2: Analysis
+              </a>
+              <a href="https://drive.google.com/file/d/1gJcHPeMbd25LZCsHfHGewMz_D7fm815L/view" target="_blank" class="phase-link">
+                Phase 3: Strategic Planning
+              </a>
+            </div>
+          `;
+        }
+        
         if (image) {
           content += `<img src="${image}" alt="${title}" class="w-full max-h-72 object-contain mb-4 rounded">`;
         }
         
-        if (link) {
+        if (link && title !== "Heliopolis Transformation") {
           content += `<a href="${link}" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline block mt-4">View Full Project →</a>`;
         }
         
