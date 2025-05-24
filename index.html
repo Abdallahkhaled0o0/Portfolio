@@ -96,18 +96,22 @@
     /* Project group styling */
     .project-group {
       position: relative;
-      margin-top: -8px; /* Pull up closer to phases */
+      margin-top: -8px;
     }
     .project-group-title {
       cursor: pointer;
-      padding: 12px;
+      padding: 16px;
       border-radius: 8px;
       transition: all 0.2s ease;
       text-align: center;
       font-weight: 600;
       font-size: 1.125rem;
-      color: #1e3a8a;
+      color: #374151; /* Original gray color */
       background-color: transparent;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .project-group-title:hover {
       background-color: white;
@@ -243,63 +247,66 @@
   
           <div>  
             <h4 class="text-xl font-semibold text-gray-700 mb-2 border-b border-gray-300 pb-1">Development</h4>  
-            <!-- Phases Row -->  
-            <div class="flex gap-4 justify-between max-w-4xl mx-auto mt-4">  
-              <!-- Phase 1 -->  
-              <div class="phase-item bg-transparent rounded p-4 cursor-pointer transition duration-300 ease-in-out hover:bg-white hover:shadow-lg project-item" 
-                   data-title="Heliopolis Transformation - Phase 1" 
-                   data-description="Data collection phase for urban development project." 
-                   data-link="https://drive.google.com/file/d/1rUHniPHQLqTULzSfk_5tuAsZxEhGamd7/view">  
-                <a href="https://drive.google.com/file/d/1rUHniPHQLqTULzSfk_5tuAsZxEhGamd7/view" target="_blank" rel="noopener noreferrer">  
-                  <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%; overflow: hidden; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">  
-                    <iframe src="https://drive.google.com/file/d/1rUHniPHQLqTULzSfk_5tuAsZxEhGamd7/preview" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 0.5rem;"></iframe>  
+            <!-- Phases Container -->
+            <div class="relative">
+              <!-- Phases Row -->  
+              <div class="flex gap-4 justify-between max-w-4xl mx-auto">  
+                <!-- Phase 1 -->  
+                <div class="phase-item bg-transparent rounded p-4 cursor-pointer transition duration-300 ease-in-out hover:bg-white hover:shadow-lg project-item" 
+                     data-title="Heliopolis Transformation - Phase 1" 
+                     data-description="Data collection phase for urban development project." 
+                     data-link="https://drive.google.com/file/d/1rUHniPHQLqTULzSfk_5tuAsZxEhGamd7/view">  
+                  <a href="https://drive.google.com/file/d/1rUHniPHQLqTULzSfk_5tuAsZxEhGamd7/view" target="_blank" rel="noopener noreferrer">  
+                    <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%; overflow: hidden; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">  
+                      <iframe src="https://drive.google.com/file/d/1rUHniPHQLqTULzSfk_5tuAsZxEhGamd7/preview" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 0.5rem;"></iframe>  
+                    </div>  
+                  </a>  
+                  <div class="mt-2 text-center">
+                    <div class="phase-title">Phase 1</div>
+                    <div class="phase-description">(Data Collection)</div>
                   </div>  
-                </a>  
-                <div class="mt-2 text-center">
-                  <div class="phase-title">Phase 1</div>
-                  <div class="phase-description">(Data Collection)</div>
+                </div>  
+
+                <!-- Phase 2 -->  
+                <div class="phase-item bg-transparent rounded p-4 cursor-pointer transition duration-300 ease-in-out hover:bg-white hover:shadow-lg project-item" 
+                     data-title="Heliopolis Transformation - Phase 2" 
+                     data-description="Analysis phase for urban development project." 
+                     data-link="https://drive.google.com/file/d/1_tF-cUjD6pJFZ0h2wc2p3tE3iSRthpmd/view">  
+                  <a href="https://drive.google.com/file/d/1_tF-cUjD6pJFZ0h2wc2p3tE3iSRthpmd/view" target="_blank" rel="noopener noreferrer">  
+                    <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%; overflow: hidden; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">  
+                      <iframe src="https://drive.google.com/file/d/1_tF-cUjD6pJFZ0h2wc2p3tE3iSRthpmd/preview" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 0.5rem;"></iframe>  
+                    </div>  
+                  </a>  
+                  <div class="mt-2 text-center">
+                    <div class="phase-title">Phase 2</div>
+                    <div class="phase-description">(Analysis)</div>
+                  </div>  
+                </div>  
+
+                <!-- Phase 3 -->  
+                <div class="phase-item bg-transparent rounded p-4 cursor-pointer transition duration-300 ease-in-out hover:bg-white hover:shadow-lg project-item" 
+                     data-title="Heliopolis Transformation - Phase 3" 
+                     data-description="Strategic planning phase for urban development project." 
+                     data-link="https://drive.google.com/file/d/1gJcHPeMbd25LZCsHfHGewMz_D7fm815L/view">  
+                  <a href="https://drive.google.com/file/d/1gJcHPeMbd25LZCsHfHGewMz_D7fm815L/view" target="_blank" rel="noopener noreferrer">  
+                    <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%; overflow: hidden; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">  
+                      <iframe src="https://drive.google.com/file/d/1gJcHPeMbd25LZCsHfHGewMz_D7fm815L/preview" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 0.5rem;"></iframe>  
+                    </div>  
+                  </a>  
+                  <div class="mt-2 text-center">
+                    <div class="phase-title">Phase 3</div>
+                    <div class="phase-description">(Strategic Planning)</div>
+                  </div>  
                 </div>  
               </div>  
 
-              <!-- Phase 2 -->  
-              <div class="phase-item bg-transparent rounded p-4 cursor-pointer transition duration-300 ease-in-out hover:bg-white hover:shadow-lg project-item" 
-                   data-title="Heliopolis Transformation - Phase 2" 
-                   data-description="Analysis phase for urban development project." 
-                   data-link="https://drive.google.com/file/d/1_tF-cUjD6pJFZ0h2wc2p3tE3iSRthpmd/view">  
-                <a href="https://drive.google.com/file/d/1_tF-cUjD6pJFZ0h2wc2p3tE3iSRthpmd/view" target="_blank" rel="noopener noreferrer">  
-                  <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%; overflow: hidden; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">  
-                    <iframe src="https://drive.google.com/file/d/1_tF-cUjD6pJFZ0h2wc2p3tE3iSRthpmd/preview" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 0.5rem;"></iframe>  
-                  </div>  
-                </a>  
-                <div class="mt-2 text-center">
-                  <div class="phase-title">Phase 2</div>
-                  <div class="phase-description">(Analysis)</div>
-                </div>  
-              </div>  
-
-              <!-- Phase 3 -->  
-              <div class="phase-item bg-transparent rounded p-4 cursor-pointer transition duration-300 ease-in-out hover:bg-white hover:shadow-lg project-item" 
-                   data-title="Heliopolis Transformation - Phase 3" 
-                   data-description="Strategic planning phase for urban development project." 
-                   data-link="https://drive.google.com/file/d/1gJcHPeMbd25LZCsHfHGewMz_D7fm815L/view">  
-                <a href="https://drive.google.com/file/d/1gJcHPeMbd25LZCsHfHGewMz_D7fm815L/view" target="_blank" rel="noopener noreferrer">  
-                  <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%; overflow: hidden; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">  
-                    <iframe src="https://drive.google.com/file/d/1gJcHPeMbd25LZCsHfHGewMz_D7fm815L/preview" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 0.5rem;"></iframe>  
-                  </div>  
-                </a>  
-                <div class="mt-2 text-center">
-                  <div class="phase-title">Phase 3</div>
-                  <div class="phase-description">(Strategic Planning)</div>
-                </div>  
-              </div>  
-            </div>  
-
-            <!-- Heliopolis Transformation Project Card -->
-            <div class="project-group">
-              <div class="project-group-title project-item" 
-                   data-title="Heliopolis Transformation" 
-                   data-description="A comprehensive urban development project consisting of three phases: data collection, analysis, and strategic planning for the Heliopolis district.">
-                Heliopolis Transformation
+              <!-- Heliopolis Transformation Project Card -->
+              <div class="project-group">
+                <div class="project-group-title project-item" 
+                     data-title="Heliopolis Transformation" 
+                     data-description="A comprehensive urban development project consisting of three phases: data collection, analysis, and strategic planning for the Heliopolis district.">
+                  Heliopolis Transformation
+                </div>
               </div>
             </div>
           </div>  
