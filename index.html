@@ -74,6 +74,22 @@
     .close:hover {
       color: black;
     }
+
+    /* Phase links styling */
+    .phase-link {
+      display: block;
+      padding: 8px 12px;
+      margin: 6px 0;
+      background-color: #f0f9ff;
+      border-radius: 4px;
+      color: #0369a1;
+      transition: background-color 0.2s;
+    }
+
+    .phase-link:hover {
+      background-color: #e0f2fe;
+      text-decoration: none;
+    }
   </style>  
 </head>  
 <body class="bg-white text-gray-800 font-sans">  
@@ -190,47 +206,23 @@
   
           <div>  
             <h4 class="text-xl font-semibold text-gray-700 mb-2 border-b border-gray-300 pb-1">Development</h4>  
-            <!-- Phases Row -->  
-            <div class="flex gap-6 justify-center max-w-4xl mx-auto mt-4">  
-              <!-- Phase 1 -->  
-              <div class="bg-transparent rounded p-4 cursor-pointer transition duration-300 ease-in-out hover:bg-white hover:shadow-lg project-item" style="flex: 4 1 0%; aspect-ratio: 4 / 3;" 
-                   data-title="Phase 1 (Data Collection)" 
-                   data-description="Initial data collection phase for urban development project." 
-                   data-link="https://drive.google.com/file/d/1rUHniPHQLqTULzSfk_5tuAsZxEhGamd7/view">  
-                <a href="https://drive.google.com/file/d/1rUHniPHQLqTULzSfk_5tuAsZxEhGamd7/view" target="_blank" rel="noopener noreferrer">  
-                  <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%; overflow: hidden; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">  
-                    <iframe src="https://drive.google.com/file/d/1rUHniPHQLqTULzSfk_5tuAsZxEhGamd7/preview" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 0.5rem;"></iframe>  
-                  </div>  
-                </a>  
-                <h5 class="mt-3 text-center font-semibold text-gray-800">Phase 1 (Data Collection)</h5>  
-              </div>  
-  
-              <!-- Phase 2 -->  
-              <div class="bg-transparent rounded p-4 cursor-pointer transition duration-300 ease-in-out hover:bg-white hover:shadow-lg project-item" style="flex: 4 1 0%; aspect-ratio: 4 / 3;" 
-                   data-title="Phase 2 (Analysis)" 
-                   data-description="Analysis phase for urban development project." 
-                   data-link="https://drive.google.com/file/d/1_tF-cUjD6pJFZ0h2wc2p3tE3iSRthpmd/view">  
-                <a href="https://drive.google.com/file/d/1_tF-cUjD6pJFZ0h2wc2p3tE3iSRthpmd/view" target="_blank" rel="noopener noreferrer">  
-                  <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%; overflow: hidden; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">  
-                    <iframe src="https://drive.google.com/file/d/1_tF-cUjD6pJFZ0h2wc2p3tE3iSRthpmd/preview" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 0.5rem;"></iframe>  
-                  </div>  
-                </a>  
-                <h5 class="mt-3 text-center font-semibold text-gray-800">Phase 2 (Analysis)</h5>  
-              </div>  
-  
-              <!-- Phase 3 -->  
-              <div class="bg-transparent rounded p-4 cursor-pointer transition duration-300 ease-in-out hover:bg-white hover:shadow-lg project-item" style="flex: 4 1 0%; aspect-ratio: 4 / 3;" 
-                   data-title="Phase 3 (Strategic Planning)" 
-                   data-description="Strategic planning phase for urban development project." 
-                   data-link="https://drive.google.com/file/d/1gJcHPeMbd25LZCsHfHGewMz_D7fm815L/view">  
-                <a href="https://drive.google.com/file/d/1gJcHPeMbd25LZCsHfHGewMz_D7fm815L/view" target="_blank" rel="noopener noreferrer">  
-                  <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%; overflow: hidden; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">  
-                    <iframe src="https://drive.google.com/file/d/1gJcHPeMbd25LZCsHfHGewMz_D7fm815L/preview" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 0.5rem;"></iframe>  
-                  </div>  
-                </a>  
-                <h5 class="mt-3 text-center font-semibold text-gray-800">Phase 3 (Strategic Planning)</h5>  
-              </div>  
-            </div>  
+            <!-- Combined Heliopolis Transformation Project -->
+            <div class="bg-transparent rounded p-4 cursor-pointer transition duration-300 ease-in-out hover:bg-white hover:shadow-lg project-item" 
+                 data-title="Heliopolis Transformation" 
+                 data-description="A comprehensive urban development project for Heliopolis district with three phases: data collection, analysis, and strategic planning.">
+              <h5 class="font-semibold text-gray-800 mb-3">Heliopolis Transformation</h5>
+              <div class="space-y-2">
+                <a href="https://drive.google.com/file/d/1rUHniPHQLqTULzSfk_5tuAsZxEhGamd7/view" target="_blank" rel="noopener noreferrer" class="phase-link">
+                  Phase 1: Data Collection
+                </a>
+                <a href="https://drive.google.com/file/d/1_tF-cUjD6pJFZ0h2wc2p3tE3iSRthpmd/view" target="_blank" rel="noopener noreferrer" class="phase-link">
+                  Phase 2: Analysis
+                </a>
+                <a href="https://drive.google.com/file/d/1gJcHPeMbd25LZCsHfHGewMz_D7fm815L/view" target="_blank" rel="noopener noreferrer" class="phase-link">
+                  Phase 3: Strategic Planning
+                </a>
+              </div>
+            </div>
           </div>  
   
           <div>  
