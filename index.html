@@ -25,8 +25,8 @@
     
     /* Modal styles */
     .modal {
-      visibility: hidden; /* Changed from display: none */
-      opacity: 0;        /* Added for fade transition */
+      visibility: hidden;
+      opacity: 0;
       position: fixed;
       z-index: 100;
       left: 0;
@@ -34,40 +34,33 @@
       width: 100%;
       height: 100%;
       background-color: rgba(0,0,0,0.7);
-      /* overflow: auto; Removed, as modal-content handles its own overflow */
-      transition: opacity 0.3s ease-out, visibility 0s linear 0.3s; /* Delay visibility change for fade-out */
+      transition: opacity 0.3s ease-out, visibility 0s linear 0.3s;
     }
 
-    .modal.modal-open { /* New class to control open state */
+    .modal.modal-open {
       visibility: visible;
       opacity: 1;
-      transition: opacity 0.3s ease-out; /* For fade-in */
+      transition: opacity 0.3s ease-out;
     }
     
     .modal-content {
       background-color: white;
-      margin: auto; /* Works with absolute positioning for centering if L/R/T/B are 0, but top/left/transform is more direct */
       padding: 20px;
       border-radius: 8px;
       width: 80%;
       max-width: 600px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       position: absolute;
-      top: 50%;
-      left: 50%;
-      /* transform: translate(-50%, -50%); Original centering */
-      transform: translate(-50%, -50%) scale(0.7); /* Initial state for animation: smaller */
-      opacity: 0; /* Initial state for animation: invisible */
       max-height: 80vh;
       overflow-y: auto;
       transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-      /* Optional: add a slight delay for content animation if desired */
-      /* transition-delay: 0.05s; */ 
+      transform: scale(0.7);
+      opacity: 0;
     }
 
     .modal.modal-open .modal-content {
-      transform: translate(-50%, -50%) scale(1); /* Final state: full size */
-      opacity: 1; /* Final state: fully visible */
+      transform: scale(1);
+      opacity: 1;
     }
     
     .close {
@@ -86,11 +79,11 @@
 <body class="bg-white text-gray-800 font-sans">  
   
   <div class="animate-fade-slide-up">  
-    <!-- Modal -->
+    <!-- Modal - Position will be set dynamically -->
     <div id="projectModal" class="modal">
       <div class="modal-content">
         <span class="close">×</span>
-        <div id="modalInnerContent"></div> <!-- Changed ID slightly for clarity from potential confusion -->
+        <div id="modalInnerContent"></div>
       </div>
     </div>
     
@@ -322,16 +315,15 @@
     
     // Modal functionality
     const modal = document.getElementById("projectModal");
-    const modalInnerDiv = document.getElementById("modalInnerContent"); // Target for dynamic content
-    const closeBtn = modal.querySelector(".close"); // More specific selector
+    const modalContent = modal.querySelector(".modal-content");
+    const modalInnerDiv = document.getElementById("modalInnerContent");
+    const closeBtn = modal.querySelector(".close");
     const projectItems = document.querySelectorAll(".project-item");
     
     projectItems.forEach(item => {
       item.addEventListener("click", function(e) {
         // Prevent modal opening if clicking on an interactive element like a link/iframe directly
         if (e.target.tagName === 'A' || e.target.closest('a') || e.target.tagName === 'IFRAME') {
-            // If the click is on a link or iframe, or inside a link, let the default browser action occur (e.g., navigation)
-            // and do not open the modal.
             return; 
         }
         
@@ -346,7 +338,6 @@
         `;
         
         if (image) {
-          // Adjusted image class for better display in modal
           content += `<img src="${image}" alt="${title}" class="w-full max-h-72 object-contain mb-4 rounded">`;
         }
         
@@ -355,20 +346,29 @@
         }
         
         modalInnerDiv.innerHTML = content;
-        modal.classList.add("modal-open"); // Show modal with animation
-        document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
+        
+        // Get position of clicked item
+        const rect = this.getBoundingClientRect();
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Position modal content near the clicked item
+        modalContent.style.left = `${rect.left + window.scrollX}px`;
+        modalContent.style.top = `${rect.top + window.scrollY}px`;
+        
+        modal.classList.add("modal-open");
+        document.body.style.overflow = "hidden";
       });
     });
     
     closeBtn.addEventListener("click", function() {
-      modal.classList.remove("modal-open"); // Hide modal with animation
-      document.body.style.overflow = "auto"; // Re-enable scrolling
+      modal.classList.remove("modal-open");
+      document.body.style.overflow = "auto";
     });
     
     window.addEventListener("click", function(event) {
-      if (event.target == modal) { // Clicked on the modal backdrop
-        modal.classList.remove("modal-open"); // Hide modal with animation
-        document.body.style.overflow = "auto"; // Re-enable scrolling
+      if (event.target == modal) {
+        modal.classList.remove("modal-open");
+        document.body.style.overflow = "auto";
       }
     });
   </script>  
