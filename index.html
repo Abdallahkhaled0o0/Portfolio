@@ -25,7 +25,8 @@
     
     /* Modal styles */
     .modal {
-      display: none;
+      visibility: hidden; /* Changed from display: none */
+      opacity: 0;        /* Added for fade transition */
       position: fixed;
       z-index: 100;
       left: 0;
@@ -33,12 +34,19 @@
       width: 100%;
       height: 100%;
       background-color: rgba(0,0,0,0.7);
-      overflow: auto;
+      /* overflow: auto; Removed, as modal-content handles its own overflow */
+      transition: opacity 0.3s ease-out, visibility 0s linear 0.3s; /* Delay visibility change for fade-out */
+    }
+
+    .modal.modal-open { /* New class to control open state */
+      visibility: visible;
+      opacity: 1;
+      transition: opacity 0.3s ease-out; /* For fade-in */
     }
     
     .modal-content {
       background-color: white;
-      margin: auto;
+      margin: auto; /* Works with absolute positioning for centering if L/R/T/B are 0, but top/left/transform is more direct */
       padding: 20px;
       border-radius: 8px;
       width: 80%;
@@ -47,9 +55,19 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
+      /* transform: translate(-50%, -50%); Original centering */
+      transform: translate(-50%, -50%) scale(0.7); /* Initial state for animation: smaller */
+      opacity: 0; /* Initial state for animation: invisible */
       max-height: 80vh;
       overflow-y: auto;
+      transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+      /* Optional: add a slight delay for content animation if desired */
+      /* transition-delay: 0.05s; */ 
+    }
+
+    .modal.modal-open .modal-content {
+      transform: translate(-50%, -50%) scale(1); /* Final state: full size */
+      opacity: 1; /* Final state: fully visible */
     }
     
     .close {
@@ -71,8 +89,8 @@
     <!-- Modal -->
     <div id="projectModal" class="modal">
       <div class="modal-content">
-        <span class="close">&times;</span>
-        <div id="modalContent"></div>
+        <span class="close">×</span>
+        <div id="modalInnerContent"></div> <!-- Changed ID slightly for clarity from potential confusion -->
       </div>
     </div>
     
@@ -295,7 +313,7 @@
   
     <!-- Footer -->  
     <footer class="bg-blue-50 text-center py-4 mt-10 text-sm text-gray-700">  
-      <p>&copy; 2025 Abdallah Khaled. All rights reserved.</p>  
+      <p>© 2025 Abdallah Khaled. All rights reserved.</p>  
     </footer>  
   </div>  
   
@@ -304,14 +322,18 @@
     
     // Modal functionality
     const modal = document.getElementById("projectModal");
-    const modalContent = document.getElementById("modalContent");
-    const closeBtn = document.querySelector(".close");
+    const modalInnerDiv = document.getElementById("modalInnerContent"); // Target for dynamic content
+    const closeBtn = modal.querySelector(".close"); // More specific selector
     const projectItems = document.querySelectorAll(".project-item");
     
     projectItems.forEach(item => {
       item.addEventListener("click", function(e) {
-        // Prevent default if clicking on the link directly
-        if (e.target.tagName === 'A' || e.target.closest('a')) return;
+        // Prevent modal opening if clicking on an interactive element like a link/iframe directly
+        if (e.target.tagName === 'A' || e.target.closest('a') || e.target.tagName === 'IFRAME') {
+            // If the click is on a link or iframe, or inside a link, let the default browser action occur (e.g., navigation)
+            // and do not open the modal.
+            return; 
+        }
         
         const title = this.getAttribute('data-title');
         const description = this.getAttribute('data-description');
@@ -324,27 +346,28 @@
         `;
         
         if (image) {
-          content += `<img src="${image}" alt="${title}" class="w-full h-48 object-cover mb-4 rounded">`;
+          // Adjusted image class for better display in modal
+          content += `<img src="${image}" alt="${title}" class="w-full max-h-72 object-contain mb-4 rounded">`;
         }
         
         if (link) {
-          content += `<a href="${link}" target="_blank" class="text-blue-600 hover:underline block mt-4">View Full Project →</a>`;
+          content += `<a href="${link}" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline block mt-4">View Full Project →</a>`;
         }
         
-        modalContent.innerHTML = content;
-        modal.style.display = "block";
+        modalInnerDiv.innerHTML = content;
+        modal.classList.add("modal-open"); // Show modal with animation
         document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
       });
     });
     
     closeBtn.addEventListener("click", function() {
-      modal.style.display = "none";
+      modal.classList.remove("modal-open"); // Hide modal with animation
       document.body.style.overflow = "auto"; // Re-enable scrolling
     });
     
     window.addEventListener("click", function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
+      if (event.target == modal) { // Clicked on the modal backdrop
+        modal.classList.remove("modal-open"); // Hide modal with animation
         document.body.style.overflow = "auto"; // Re-enable scrolling
       }
     });
