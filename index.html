@@ -131,6 +131,64 @@
       max-width: 500px;
       margin: 0 auto;
     }
+
+    /* Gallery styles */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .gallery-item:hover {
+      transform: scale(1.02);
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .gallery-collapsed {
+      max-height: 500px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .gallery-collapsed::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: linear-gradient(to bottom, transparent, white);
+    }
+    
+    .show-more-btn {
+      display: block;
+      margin: 20px auto 0;
+      padding: 10px 20px;
+      background-color: #1e40af;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    
+    .show-more-btn:hover {
+      background-color: #1e3a8a;
+    }
   </style>  
 </head>  
 <body class="bg-white text-gray-800 font-sans">  
@@ -151,6 +209,7 @@
         <nav class="space-x-6 text-blue-700">  
           <a href="#about" class="hover:underline">About</a>  
           <a href="#projects" class="hover:underline">Projects</a>  
+          <a href="#gallery" class="hover:underline">Gallery</a>
           <a href="#contact" class="hover:underline">Contact</a>  
         </nav>  
       </div>  
@@ -419,6 +478,55 @@
     </div>  
   </div>  
 </section>  
+
+<!-- Gallery Section -->
+<section id="gallery" class="py-16 px-4 bg-white">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-4xl font-bold text-center text-blue-900 mb-12">Gallery</h2>
+    <p class="text-lg text-center mb-8 max-w-3xl mx-auto">
+      Selected shots from various projects showcasing the breadth and depth of my work.
+    </p>
+    
+    <div id="galleryContainer" class="gallery-collapsed">
+      <div class="gallery">
+        <!-- Sample gallery items - replace with your actual project images -->
+        <div class="gallery-item">
+          <img src="images/architectural_design.jpg" alt="Architectural Design">
+        </div>
+        <div class="gallery-item">
+          <img src="tu-dortmund-slide.jpg" alt="TU Dortmund Slide">
+        </div>
+        <div class="gallery-item">
+          <img src="images/urban_design.jpg" alt="Urban Design">
+        </div>
+        <div class="gallery-item">
+          <img src="images/workshop.jpg" alt="Workshop Drawing">
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery1.jpg" alt="Project Gallery Image 1">
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery2.jpg" alt="Project Gallery Image 2">
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery3.jpg" alt="Project Gallery Image 3">
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery4.jpg" alt="Project Gallery Image 4">
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery5.jpg" alt="Project Gallery Image 5">
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery6.jpg" alt="Project Gallery Image 6">
+        </div>
+      </div>
+    </div>
+    
+    <button id="showMoreBtn" class="show-more-btn">Show More</button>
+  </div>
+</section>
+
     <!-- Contact Section -->  
     <section id="contact" class="py-12 px-4 max-w-4xl mx-auto">  
       <h2 class="text-3xl font-semibold mb-6">Contact</h2>  
@@ -573,6 +681,20 @@
         
         modalContent.style.left = `${left}px`;
         modalContent.style.top = `${top}px`;
+      }
+    });
+
+    // Gallery show more functionality
+    const showMoreBtn = document.getElementById('showMoreBtn');
+    const galleryContainer = document.getElementById('galleryContainer');
+    
+    showMoreBtn.addEventListener('click', function() {
+      if (galleryContainer.classList.contains('gallery-collapsed')) {
+        galleryContainer.classList.remove('gallery-collapsed');
+        showMoreBtn.textContent = 'Show Less';
+      } else {
+        galleryContainer.classList.add('gallery-collapsed');
+        showMoreBtn.textContent = 'Show More';
       }
     });
   </script>  
