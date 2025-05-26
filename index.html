@@ -116,7 +116,8 @@
       padding-bottom: 141.42%; /* A4 portrait ratio (height/width) */
     }
     .ratio-1-2-portrait {
-      padding-bottom: 200%; /* 1:2 portrait ratio */
+      padding-bottom: 200%; /* 1:2 portrait ratio (height is 2x width) */
+      height: 0;
     }
     .ratio-3-4-landscape {
       padding-bottom: 75%; /* 3:4 landscape ratio */
@@ -128,13 +129,14 @@
       padding-bottom: 33.33%; /* 1:3 landscape ratio */
     }
     
-    .pdf-preview-container iframe {
+    .pdf-preview-container iframe,
+    .pdf-preview-container img {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      border: none;
+      object-fit: cover;
     }
 
     /* Multi-column layout for phases */
@@ -436,7 +438,7 @@
                  data-image="tu-dortmund-slide.jpg"
                  id="tu-dortmund-slide">
               <div class="pdf-preview-container ratio-1-2-portrait">
-                <img src="tu-dortmund-slide.jpg" alt="TU Dortmund Tube Slide Alternative Design" class="w-full h-full object-cover">
+                <img src="tu-dortmund-slide.jpg" alt="TU Dortmund Tube Slide Alternative Design">
               </div>
               <div class="project-title">TU Dortmund Tube Slide Alternative Design</div>
             </div>
@@ -644,7 +646,7 @@
       </div>  
     </div>  
   </div>  
-</section>  
+</section>
 
     <!-- Contact Section -->  
     <section id="contact" class="py-12 px-4 max-w-4xl mx-auto">  
