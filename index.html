@@ -172,7 +172,9 @@
       margin-top: 24px;
     }
     
-    .gallery-item {
+    /* Landscape items (3:2 ratio) */
+    .gallery-item-landscape {
+      aspect-ratio: 3/2;
       overflow: hidden;
       border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -180,12 +182,25 @@
       cursor: pointer;
     }
     
-    .gallery-item:hover {
+    /* Portrait items (2:3 ratio) */
+    .gallery-item-portrait {
+      aspect-ratio: 2/3;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      grid-row: span 2;
+    }
+    
+    .gallery-item-landscape:hover,
+    .gallery-item-portrait:hover {
       transform: scale(1.02);
       box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
     
-    .gallery-item img {
+    .gallery-item-landscape img,
+    .gallery-item-portrait img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -193,33 +208,8 @@
       transition: transform 0.3s ease;
     }
     
-    .gallery-item:hover img {
-      transform: scale(1.05);
-    }
-    
-    /* Special gallery item for tall images */
-    .gallery-item-tall {
-      grid-row: span 2;
-      overflow: hidden;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-    
-    .gallery-item-tall:hover {
-      transform: scale(1.02);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    }
-    
-    .gallery-item-tall img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-    
-    .gallery-item-tall:hover img {
+    .gallery-item-landscape:hover img,
+    .gallery-item-portrait:hover img {
       transform: scale(1.05);
     }
     
@@ -328,79 +318,79 @@
     <div id="galleryContainer" class="gallery-collapsed">
       <div class="gallery">
         <!-- Single Room Villa (formerly Blender Villa) -->
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Single Room Villa" 
              data-project="Architectural Projects"
              data-target="single-room-villa">
           <img src="Blender Villa exterior 2.png" alt="Single Room Villa">
         </div>
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Single Room Villa" 
              data-project="Architectural Projects"
              data-target="single-room-villa">
           <img src="Blender Villa exterior 1.png" alt="Single Room Villa">
         </div>
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Single Room Villa" 
              data-project="Architectural Projects"
              data-target="single-room-villa">
           <img src="Blender Villa exterior 3.png" alt="Single Room Villa">
         </div>
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Single Room Villa" 
              data-project="Architectural Projects"
              data-target="single-room-villa">
           <img src="Blender Villa interior 1.png" alt="Single Room Villa">
         </div>
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Single Room Villa" 
              data-project="Architectural Projects"
              data-target="single-room-villa">
           <img src="Blender Villa interior 2.png" alt="Single Room Villa">
         </div>
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Single Room Villa" 
              data-project="Architectural Projects"
              data-target="single-room-villa">
           <img src="Blender Villa interior 3.png" alt="Single Room Villa">
         </div>
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Single Room Villa" 
              data-project="Architectural Projects"
              data-target="single-room-villa">
           <img src="Blender Villa landscape 1.png" alt="Single Room Villa">
         </div>
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Single Room Villa" 
              data-project="Architectural Projects"
              data-target="single-room-villa">
           <img src="Blender Villa landscape 2.png" alt="Single Room Villa">
         </div>
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Single Room Villa" 
              data-project="Architectural Projects"
              data-target="single-room-villa">
           <img src="Blender Villa landscape 3.png" alt="Single Room Villa">
         </div>
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Single Room Villa" 
              data-project="Architectural Projects"
              data-target="single-room-villa">
           <img src="Blender Villa landscape 4.png" alt="Single Room Villa">
         </div>
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Single Room Villa" 
              data-project="Architectural Projects"
              data-target="single-room-villa">
           <img src="Blender Villa landscape 5.png" alt="Single Room Villa">
         </div>
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Single Room Villa" 
              data-project="Architectural Projects"
              data-target="single-room-villa">
           <img src="Blender Villa landscape 6.png" alt="Single Room Villa">
         </div>
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Single Room Villa" 
              data-project="Architectural Projects"
              data-target="single-room-villa">
@@ -408,25 +398,25 @@
         </div>
         
         <!-- Vacation House -->
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Vacation House" 
              data-project="Architectural Projects"
              data-target="vacation-house">
           <img src="Vacation House 1.jpg" alt="Vacation House">
         </div>
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Vacation House" 
              data-project="Architectural Projects"
              data-target="vacation-house">
           <img src="Vacation House 2.jpg" alt="Vacation House">
         </div>
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Vacation House" 
              data-project="Architectural Projects"
              data-target="vacation-house">
           <img src="Vacation House 3.jpg" alt="Vacation House">
         </div>
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Vacation House" 
              data-project="Architectural Projects"
              data-target="vacation-house">
@@ -434,7 +424,7 @@
         </div>
         
         <!-- Bakht Hotel -->
-        <div class="gallery-item-tall" 
+        <div class="gallery-item-portrait" 
              data-title="Bakht Hotel" 
              data-project="Architectural Projects"
              data-target="bakht-hotel">
@@ -442,13 +432,13 @@
         </div>
         
         <!-- Ahmed Residence -->
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Ahmed Residence" 
              data-project="Architectural Projects"
              data-target="ahmed-residence">
           <img src="Ahmed-1+0.jpg" alt="Ahmed Residence">
         </div>
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Ahmed Residence" 
              data-project="Architectural Projects"
              data-target="ahmed-residence">
@@ -456,7 +446,7 @@
         </div>
         
         <!-- Amina Hakim Residence -->
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Amina Hakim Residence" 
              data-project="Architectural Projects"
              data-target="amina-hakim-residence">
@@ -464,7 +454,7 @@
         </div>
         
         <!-- TU Dortmund Slide -->
-        <div class="gallery-item-tall" 
+        <div class="gallery-item-portrait" 
              data-title="TU Dortmund Slide" 
              data-project="Architectural Projects"
              data-target="tu-dortmund-slide">
@@ -472,7 +462,7 @@
         </div>
         
         <!-- Clock Design -->
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Clock Design" 
              data-project="Architectural Projects"
              data-target="clock-design">
@@ -480,25 +470,25 @@
         </div>
         
         <!-- Creative Hand Village -->
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Creative Hand Village" 
              data-project="Urban Projects"
              data-target="creative-hand-village">
           <img src="images/urban_design.jpg" alt="Creative Hand Village">
         </div>
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Creative Hand Village" 
              data-project="Urban Projects"
              data-target="creative-hand-village">
           <img src="images/urban_design2.jpg" alt="Creative Hand Village">
         </div>
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Creative Hand Village" 
              data-project="Urban Projects"
              data-target="creative-hand-village">
           <img src="images/urban_design3.jpg" alt="Creative Hand Village">
         </div>
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Creative Hand Village" 
              data-project="Urban Projects"
              data-target="creative-hand-village">
@@ -506,25 +496,25 @@
         </div>
         
         <!-- Rush City -->
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Rush City" 
              data-project="Urban Projects"
              data-target="rush-city">
           <img src="rush_city.jpg" alt="Rush City">
         </div>
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Rush City" 
              data-project="Urban Projects"
              data-target="rush-city">
           <img src="rush_city2.jpg" alt="Rush City">
         </div>
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Rush City" 
              data-project="Urban Projects"
              data-target="rush-city">
           <img src="rush_city3.jpg" alt="Rush City">
         </div>
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Rush City" 
              data-project="Urban Projects"
              data-target="rush-city">
@@ -532,7 +522,7 @@
         </div>
         
         <!-- Heliopolis Transformation -->
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Heliopolis Transformation" 
              data-project="Urban Development"
              data-target="heliopolis-transformation">
@@ -540,19 +530,19 @@
         </div>
         
         <!-- Gated Residential Compound -->
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Gated Residential Compound" 
              data-project="Housing Projects"
              data-target="gated-residential-compound">
           <img src="gated-residential.jpg" alt="Gated Residential Compound">
         </div>
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Gated Residential Compound" 
              data-project="Housing Projects"
              data-target="gated-residential-compound">
           <img src="gated-residential2.jpg" alt="Gated Residential Compound">
         </div>
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Gated Residential Compound" 
              data-project="Housing Projects"
              data-target="gated-residential-compound">
@@ -560,25 +550,25 @@
         </div>
         
         <!-- Un-Gated Housing -->
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Un-Gated Housing" 
              data-project="Housing Projects"
              data-target="un-gated-housing">
           <img src="un-gated1.jpg" alt="Un-Gated Housing">
         </div>
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Un-Gated Housing" 
              data-project="Housing Projects"
              data-target="un-gated-housing">
           <img src="un-gated2.jpg" alt="Un-Gated Housing">
         </div>
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Un-Gated Housing" 
              data-project="Housing Projects"
              data-target="un-gated-housing">
           <img src="un-gated3.jpg" alt="Un-Gated Housing">
         </div>
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Un-Gated Housing" 
              data-project="Housing Projects"
              data-target="un-gated-housing">
@@ -586,7 +576,7 @@
         </div>
         
         <!-- Pedestrian Bridge Over The Nile -->
-        <div class="gallery-item" 
+        <div class="gallery-item-landscape" 
              data-title="Pedestrian Bridge Over The Nile" 
              data-project="Landscape Design"
              data-target="pedestrian-bridge-over-the-nile">
@@ -1162,7 +1152,7 @@
     });
 
     // Gallery item click to scroll to project and highlight
-    const galleryItems = document.querySelectorAll('.gallery-item, .gallery-item-tall');
+    const galleryItems = document.querySelectorAll('.gallery-item-landscape, .gallery-item-portrait');
     galleryItems.forEach(item => {
       item.addEventListener('click', function() {
         const targetId = this.getAttribute('data-target');
