@@ -222,6 +222,11 @@
     .highlight-project {
       animation: highlight 1s ease;
     }
+    
+    /* Half width project item */
+    .project-item-half {
+      width: calc(50% - 8px);
+    }
   </style>  
 </head>  
 <body class="bg-white text-gray-800 font-sans">  
@@ -278,92 +283,61 @@
     
     <div id="galleryContainer" class="gallery-collapsed">
       <div class="gallery">
-        <!-- Sample gallery items with data attributes for modal -->
+        <!-- Blender Villa -->
         <div class="gallery-item" 
-             data-title="Mixed Use Tower" 
+             data-title="Blender Villa" 
              data-project="Architectural Projects"
-             data-target="mixed-use-tower">
-          <img src="mixed_use_tower.jpg" alt="Mixed Use Tower">
+             data-target="blender-villa">
+          <img src="Blender Villa exterior 1.png" alt="Blender Villa">
         </div>
         <div class="gallery-item" 
-             data-title="Alex. Exhibition Centre" 
+             data-title="Blender Villa" 
              data-project="Architectural Projects"
-             data-target="alex-exhibition-centre">
-          <img src="images/alex_exhibition.jpg" alt="Alex. Exhibition Centre">
+             data-target="blender-villa">
+          <img src="Blender Villa exterior 2.png" alt="Blender Villa">
         </div>
         <div class="gallery-item" 
-             data-title="Renault Exhibition Center" 
+             data-title="Blender Villa" 
              data-project="Architectural Projects"
-             data-target="renault-exhibition-center">
-          <img src="images/renault_exhibition.jpg" alt="Renault Exhibition Center">
+             data-target="blender-villa">
+          <img src="Blender Villa exterior 3.png" alt="Blender Villa">
         </div>
         <div class="gallery-item" 
-             data-title="TU Dortmund Slide" 
+             data-title="Blender Villa" 
              data-project="Architectural Projects"
-             data-target="tu-dortmund-slide">
-          <img src="tu-dortmund-slide.jpg" alt="TU Dortmund Slide">
+             data-target="blender-villa">
+          <img src="Blender Villa interior 1.png" alt="Blender Villa">
+        </div>
+        
+        <!-- Vacation House -->
+        <div class="gallery-item" 
+             data-title="Vacation House" 
+             data-project="Architectural Projects"
+             data-target="vacation-house">
+          <img src="Vacation House 1.jpg" alt="Vacation House">
         </div>
         <div class="gallery-item" 
-             data-title="Urban Design Concept" 
-             data-project="Urban Projects"
-             data-target="urban-design-concept">
-          <img src="images/urban_design.jpg" alt="Urban Design">
+             data-title="Vacation House" 
+             data-project="Architectural Projects"
+             data-target="vacation-house">
+          <img src="Vacation House 2.jpg" alt="Vacation House">
         </div>
         <div class="gallery-item" 
-             data-title="Technical Drawing" 
-             data-project="Workshop Drawings"
-             data-target="technical-drawings">
-          <img src="images/workshop.jpg" alt="Workshop Drawing">
+             data-title="Vacation House" 
+             data-project="Architectural Projects"
+             data-target="vacation-house">
+          <img src="Vacation House 3.jpg" alt="Vacation House">
         </div>
+        
+        <!-- Bakht Hotel -->
         <div class="gallery-item" 
-             data-title="Mixed Use Tower Workshop" 
-             data-project="Workshop Drawings"
-             data-target="mixed-use-tower-workshop">
-          <img src="mixed_use_tower_workshop.jpg" alt="Mixed Use Tower Workshop">
+             data-title="Bakht Hotel" 
+             data-project="Architectural Projects"
+             data-target="bakht-hotel">
+          <img src="Backt Hotel.jpg" alt="Bakht Hotel">
         </div>
-        <div class="gallery-item" 
-             data-title="Twin House" 
-             data-project="Workshop Drawings"
-             data-target="twin-house">
-          <img src="twin_house.jpg" alt="Twin House">
-        </div>
-        <div class="gallery-item" 
-             data-title="Heliopolis Transformation" 
-             data-project="Urban Development"
-             data-target="heliopolis-transformation">
-          <img src="heliopolis.jpg" alt="Heliopolis Transformation">
-        </div>
-        <div class="gallery-item" 
-             data-title="Residential Compound" 
-             data-project="Housing Projects"
-             data-target="gated-residential-compound">
-          <img src="gated-residential.jpg" alt="Residential Compound">
-        </div>
-        <div class="gallery-item" 
-             data-title="Nile Bridge" 
-             data-project="Landscape Design"
-             data-target="pedestrian-bridge-over-the-nile">
-          <img src="nile_bridge.jpg" alt="Nile Bridge">
-        </div>
-        <div class="gallery-item" 
-             data-title="International Park" 
-             data-project="Landscape Renovation"
-             data-target="renovation-of-the-international-park">
-          <img src="park.jpg" alt="International Park">
-        </div>
-        <div class="gallery-item" 
-             data-title="Creative Hand Village" 
-             data-project="Urban Design"
-             data-target="creative-hand-village">
-          <img src="creative_village.jpg" alt="Creative Hand Village">
-        </div>
-        <div class="gallery-item" 
-             data-title="Rush City" 
-             data-project="Urban Design"
-             data-target="rush-city">
-          <img src="rush_city.jpg" alt="Rush City">
-        </div>
-        <!-- New gallery items -->
+        
+        <!-- Ahmed Residence -->
         <div class="gallery-item" 
              data-title="Ahmed Residence" 
              data-project="Architectural Projects"
@@ -376,34 +350,76 @@
              data-target="ahmed-residence">
           <img src="Ahmed1+2.jpg" alt="Ahmed Residence">
         </div>
+        
+        <!-- Amina Hakim Residence -->
         <div class="gallery-item" 
              data-title="Amina Hakim Residence" 
              data-project="Architectural Projects"
              data-target="amina-hakim-residence">
           <img src="Amina Hakim.png" alt="Amina Hakim Residence">
         </div>
+        
+        <!-- TU Dortmund Slide -->
         <div class="gallery-item" 
-             data-title="Backt Hotel" 
+             data-title="TU Dortmund Slide" 
              data-project="Architectural Projects"
-             data-target="backt-hotel">
-          <img src="Backt Hotel.jpg" alt="Backt Hotel">
+             data-target="tu-dortmund-slide">
+          <img src="tu-dortmund-slide.jpg" alt="TU Dortmund Slide">
         </div>
-        <div class="gallery-item" 
-             data-title="Blender Villa" 
-             data-project="Architectural Projects"
-             data-target="blender-villa">
-          <img src="Blender Villa exterior 1.png" alt="Blender Villa">
-        </div>
-        <div class="gallery-item" 
-             data-title="Vacation House" 
-             data-project="Architectural Projects"
-             data-target="vacation-house">
-          <img src="Vacation House 1.jpg" alt="Vacation House">
-        </div>
+        
+        <!-- Blender Clock -->
         <div class="gallery-item" 
              data-title="Blender Clock" 
              data-project="Architectural Projects">
           <img src="Blender Clock.png" alt="Blender Clock">
+        </div>
+        
+        <!-- Creative Hand Village -->
+        <div class="gallery-item" 
+             data-title="Creative Hand Village" 
+             data-project="Urban Projects"
+             data-target="creative-hand-village">
+          <img src="images/urban_design.jpg" alt="Creative Hand Village">
+        </div>
+        
+        <!-- Rush City -->
+        <div class="gallery-item" 
+             data-title="Rush City" 
+             data-project="Urban Projects"
+             data-target="rush-city">
+          <img src="rush_city.jpg" alt="Rush City">
+        </div>
+        
+        <!-- Heliopolis Transformation -->
+        <div class="gallery-item" 
+             data-title="Heliopolis Transformation" 
+             data-project="Urban Development"
+             data-target="heliopolis-transformation">
+          <img src="heliopolis.jpg" alt="Heliopolis Transformation">
+        </div>
+        
+        <!-- Gated Residential Compound -->
+        <div class="gallery-item" 
+             data-title="Gated Residential Compound" 
+             data-project="Housing Projects"
+             data-target="gated-residential-compound">
+          <img src="gated-residential.jpg" alt="Gated Residential Compound">
+        </div>
+        
+        <!-- Pedestrian Bridge Over The Nile -->
+        <div class="gallery-item" 
+             data-title="Pedestrian Bridge Over The Nile" 
+             data-project="Landscape Design"
+             data-target="pedestrian-bridge-over-the-nile">
+          <img src="nile_bridge.jpg" alt="Pedestrian Bridge Over The Nile">
+        </div>
+        
+        <!-- Renovation of the International Park -->
+        <div class="gallery-item" 
+             data-title="Renovation of the International Park" 
+             data-project="Landscape Renovation"
+             data-target="renovation-of-the-international-park">
+          <img src="park.jpg" alt="Renovation of the International Park">
         </div>
       </div>
     </div>
@@ -437,54 +453,42 @@
           <div class="project-row">
             <h4 class="text-xl font-semibold text-gray-700 mb-2 border-b border-gray-300 pb-1">Design</h4>
             
-            <!-- Mixed Use Tower -->
+            <!-- Blender Villa -->
             <div class="project-item" 
-                 data-title="Mixed Use Tower" 
-                 data-description="Design for a mixed-use tower combining residential and commercial spaces." 
-                 data-link="https://drive.google.com/file/d/1lAfwXZ3HyTRAKufwcsiYckM7Q7Ihlewj/view"
-                 id="mixed-use-tower">
+                 data-title="Blender Villa" 
+                 data-description="Modern villa design with clean lines, large windows, and seamless indoor-outdoor connection." 
+                 data-image="Blender Villa exterior 1.png"
+                 id="blender-villa">
               <div class="pdf-preview-container ratio-3-4-landscape">
-                <iframe src="https://drive.google.com/file/d/1lAfwXZ3HyTRAKufwcsiYckM7Q7Ihlewj/preview" frameborder="0" allowfullscreen></iframe>
+                <img src="Blender Villa exterior 1.png" alt="Blender Villa">
               </div>
-              <div class="project-title">Mixed Use Tower</div>
+              <div class="project-title">Blender Villa</div>
             </div>
             
-            <!-- Alex. Exhibition Centre -->
+            <!-- Vacation House -->
             <div class="project-item" 
-                 data-title="Alex. Exhibition Centre" 
-                 data-description="Design concept for Alexandria Exhibition Centre." 
-                 data-link="https://drive.google.com/file/d/1tc5lfUuOMF-8Dqxj4xCoz6AErPib6hiM/view"
-                 id="alex-exhibition-centre">
+                 data-title="Vacation House" 
+                 data-description="Coastal vacation home design with panoramic views and relaxed living spaces." 
+                 data-image="Vacation House 1.jpg"
+                 id="vacation-house">
               <div class="pdf-preview-container ratio-3-4-landscape">
-                <iframe src="https://drive.google.com/file/d/1tc5lfUuOMF-8Dqxj4xCoz6AErPib6hiM/preview" frameborder="0" allowfullscreen></iframe>
+                <img src="Vacation House 1.jpg" alt="Vacation House">
               </div>
-              <div class="project-title">Alex. Exhibition Centre</div>
+              <div class="project-title">Vacation House</div>
             </div>
             
-            <!-- Renault Exhibition Center -->
+            <!-- Bakht Hotel -->
             <div class="project-item" 
-                 data-title="Renault Exhibition Center" 
-                 data-description="Design for Renault Exhibition Center showcasing automotive innovations." 
-                 data-link="https://drive.google.com/file/d/1iZovXHUjak6_65Jd-IvRKUHts724GcGW/view"
-                 id="renault-exhibition-center">
-              <div class="pdf-preview-container ratio-1-2-landscape">
-                <iframe src="https://drive.google.com/file/d/1iZovXHUjak6_65Jd-IvRKUHts724GcGW/preview" frameborder="0" allowfullscreen></iframe>
-              </div>
-              <div class="project-title">Renault Exhibition Center</div>
-            </div>
-            
-            <!-- TU Dortmund Tube Slide -->
-            <div class="project-item" 
-                 data-title="TU Dortmund Tube Slide Alternative Design" 
-                 data-description="Alternative design for the TU Dortmund tube slide." 
-                 data-image="tu-dortmund-slide.jpg"
-                 id="tu-dortmund-slide">
+                 data-title="Bakht Hotel" 
+                 data-description="Contemporary hotel design with innovative spatial organization and luxurious amenities." 
+                 data-image="Backt Hotel.jpg"
+                 id="bakht-hotel">
               <div class="pdf-preview-container ratio-1-2-portrait">
-                <img src="tu-dortmund-slide.jpg" alt="TU Dortmund Tube Slide Alternative Design">
+                <img src="Backt Hotel.jpg" alt="Bakht Hotel">
               </div>
-              <div class="project-title">TU Dortmund Tube Slide Alternative Design</div>
+              <div class="project-title">Bakht Hotel</div>
             </div>
-
+            
             <!-- Ahmed Residence -->
             <div class="project-item" 
                  data-title="Ahmed Residence" 
@@ -518,41 +522,41 @@
               </div>
               <div class="project-title">Amina Hakim Residence</div>
             </div>
-
-            <!-- Backt Hotel -->
+            
+            <!-- Mixed Use Tower -->
             <div class="project-item" 
-                 data-title="Backt Hotel" 
-                 data-description="Contemporary hotel design with innovative spatial organization and luxurious amenities." 
-                 data-image="Backt Hotel.jpg"
-                 id="backt-hotel">
+                 data-title="Mixed Use Tower" 
+                 data-description="Design for a mixed-use tower combining residential and commercial spaces." 
+                 data-link="https://drive.google.com/file/d/1lAfwXZ3HyTRAKufwcsiYckM7Q7Ihlewj/view"
+                 id="mixed-use-tower">
               <div class="pdf-preview-container ratio-3-4-landscape">
-                <img src="Backt Hotel.jpg" alt="Backt Hotel">
+                <iframe src="https://drive.google.com/file/d/1lAfwXZ3HyTRAKufwcsiYckM7Q7Ihlewj/preview" frameborder="0" allowfullscreen></iframe>
               </div>
-              <div class="project-title">Backt Hotel</div>
+              <div class="project-title">Mixed Use Tower</div>
             </div>
-
-            <!-- Blender Villa -->
-            <div class="project-item" 
-                 data-title="Blender Villa" 
-                 data-description="Modern villa design with clean lines, large windows, and seamless indoor-outdoor connection." 
-                 data-image="Blender Villa exterior 1.png"
-                 id="blender-villa">
-              <div class="pdf-preview-container ratio-3-4-landscape">
-                <img src="Blender Villa exterior 1.png" alt="Blender Villa">
+            
+            <!-- TU Dortmund Slide and Blender Clock -->
+            <div class="flex gap-4">
+              <div class="project-item project-item-half" 
+                   data-title="TU Dortmund Tube Slide Alternative Design" 
+                   data-description="Alternative design for the TU Dortmund tube slide." 
+                   data-image="tu-dortmund-slide.jpg"
+                   id="tu-dortmund-slide">
+                <div class="pdf-preview-container ratio-1-2-portrait">
+                  <img src="tu-dortmund-slide.jpg" alt="TU Dortmund Tube Slide Alternative Design">
+                </div>
+                <div class="project-title">TU Dortmund Slide</div>
               </div>
-              <div class="project-title">Blender Villa</div>
-            </div>
-
-            <!-- Vacation House -->
-            <div class="project-item" 
-                 data-title="Vacation House" 
-                 data-description="Coastal vacation home design with panoramic views and relaxed living spaces." 
-                 data-image="Vacation House 1.jpg"
-                 id="vacation-house">
-              <div class="pdf-preview-container ratio-3-4-landscape">
-                <img src="Vacation House 1.jpg" alt="Vacation House">
+              
+              <div class="project-item project-item-half" 
+                   data-title="Blender Clock" 
+                   data-description="3D model of a modern clock design created in Blender." 
+                   data-image="Blender Clock.png">
+                <div class="pdf-preview-container ratio-1-2-portrait">
+                  <img src="Blender Clock.png" alt="Blender Clock">
+                </div>
+                <div class="project-title">Blender Clock</div>
               </div>
-              <div class="project-title">Vacation House</div>
             </div>
           </div>
           
@@ -705,10 +709,10 @@
             <div class="project-item" 
                  data-title="Gated Residential Compound" 
                  data-description="Design and planning for a gated residential community." 
-                 data-link="https://drive.google.com/file/d/1X4dso8FTXdpSEuWg2U1w48920C7BTGbl/view"
+                 data-link="https://drive.google.com/file/d/1H88UPx31CQ6hUuPm-rJj4z6vHaBNzSV9/view"
                  id="gated-residential-compound">
               <div class="pdf-preview-container ratio-3-4-landscape">
-                <iframe src="https://drive.google.com/file/d/1X4dso8FTXdpSEuWg2U1w48920C7BTGbl/preview" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://drive.google.com/file/d/1H88UPx31CQ6hUuPm-rJj4z6vHaBNzSV9/preview" frameborder="0" allowfullscreen></iframe>
               </div>
               <div class="project-title">Gated Residential Compound</div>
             </div>
