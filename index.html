@@ -182,10 +182,9 @@
       display: block;
     }
     
-    /* Special gallery item for TU Dortmund slide */
+    /* Special gallery item for tall images */
     .gallery-item-tall {
       grid-row: span 2;
-      height: auto;
     }
     
     .gallery-item-tall img {
@@ -282,11 +281,14 @@
     <section id="about" class="py-12 px-4 max-w-4xl mx-auto">  
       <h2 class="text-3xl font-semibold mb-4">About Me</h2>  
       <p class="text-lg">  
-        I am a multidisciplinary engineer with a background in <strong>architectural engineering</strong>, specializing in <strong>urban planning and design</strong>.  
-        My work spans from <strong>detailed architectural and landscape elements</strong> to <strong>city-scale planning</strong> and <strong>regional visions</strong>.   
-        I also provide technical and construction consultancy with workshop drawings.   
-        I value <strong>sustainability</strong> and <strong>eco-friendly</strong> design.  
-      </p>  
+        I am a multidisciplinary engineer with a background in <strong>architectural engineering</strong>, specializing in <strong>urban planning & design</strong>. My expertise spans both <strong>architectural & urban</strong> fields allowing me to deal with various scales of projects ranging from detailed <strong>architectural & landscape</strong> elements to <strong>city-scale planning & regional visions</strong>.
+      </p>
+      <p class="text-lg mt-4">
+        In addition to <strong>Planning & Design</strong>, I have practical experience in <strong>construction consultancy</strong>, and able to provide support in the <strong>technical workshop drawings & construction documentations</strong> with <strong>structural Considerations</strong>.
+      </p>
+      <p class="text-lg mt-4">
+        I am also aware of the current <strong>Environmental</strong> situation, I always consider <strong>sustainability & eco-friendly</strong> solutions.
+      </p>
     </section>  
 
 <!-- Gallery Section -->
@@ -342,8 +344,8 @@
           <img src="Vacation House 3.jpg" alt="Vacation House">
         </div>
         
-        <!-- Bakht Hotel -->
-        <div class="gallery-item" 
+        <!-- Bakht Hotel - Now tall portrait -->
+        <div class="gallery-item-tall" 
              data-title="Bakht Hotel" 
              data-project="Architectural Projects"
              data-target="bakht-hotel">
@@ -372,7 +374,7 @@
           <img src="Amina Hakim.png" alt="Amina Hakim Residence">
         </div>
         
-        <!-- TU Dortmund Slide - Now spans two rows -->
+        <!-- TU Dortmund Slide - Now linked to project -->
         <div class="gallery-item-tall" 
              data-title="TU Dortmund Slide" 
              data-project="Architectural Projects"
@@ -380,14 +382,14 @@
           <img src="tu-dortmund-slide.jpg" alt="TU Dortmund Slide">
         </div>
         
-        <!-- Blender Clock -->
+        <!-- Blender Clock - Just a photo in gallery -->
         <div class="gallery-item" 
              data-title="Blender Clock" 
              data-project="Architectural Projects">
           <img src="Blender Clock.png" alt="Blender Clock">
         </div>
         
-        <!-- Creative Hand Village - Added more images -->
+        <!-- Creative Hand Village -->
         <div class="gallery-item" 
              data-title="Creative Hand Village" 
              data-project="Urban Projects"
@@ -443,14 +445,6 @@
              data-project="Landscape Design"
              data-target="pedestrian-bridge-over-the-nile">
           <img src="nile_bridge.jpg" alt="Pedestrian Bridge Over The Nile">
-        </div>
-        
-        <!-- Renovation of the International Park -->
-        <div class="gallery-item" 
-             data-title="Renovation of the International Park" 
-             data-project="Landscape Renovation"
-             data-target="renovation-of-the-international-park">
-          <img src="park.jpg" alt="Renovation of the International Park">
         </div>
       </div>
     </div>
@@ -566,28 +560,16 @@
               <div class="project-title">Mixed Use Tower</div>
             </div>
             
-            <!-- TU Dortmund Slide and Blender Clock -->
-            <div class="flex gap-4">
-              <div class="project-item project-item-half" 
-                   data-title="TU Dortmund Tube Slide Alternative Design" 
-                   data-description="Alternative design for the TU Dortmund tube slide." 
-                   data-image="tu-dortmund-slide.jpg"
-                   id="tu-dortmund-slide">
-                <div class="pdf-preview-container ratio-1-2-portrait">
-                  <img src="tu-dortmund-slide.jpg" alt="TU Dortmund Tube Slide Alternative Design">
-                </div>
-                <div class="project-title">TU Dortmund Slide</div>
+            <!-- TU Dortmund Slide -->
+            <div class="project-item" 
+                 data-title="TU Dortmund Tube Slide Alternative Design" 
+                 data-description="Alternative design for the TU Dortmund tube slide." 
+                 data-image="tu-dortmund-slide.jpg"
+                 id="tu-dortmund-slide">
+              <div class="pdf-preview-container ratio-1-2-portrait">
+                <img src="tu-dortmund-slide.jpg" alt="TU Dortmund Tube Slide Alternative Design">
               </div>
-              
-              <div class="project-item project-item-half" 
-                   data-title="Blender Clock" 
-                   data-description="3D model of a modern clock design created in Blender." 
-                   data-image="Blender Clock.png">
-                <div class="pdf-preview-container ratio-1-2-portrait">
-                  <img src="Blender Clock.png" alt="Blender Clock">
-                </div>
-                <div class="project-title">Blender Clock</div>
-              </div>
+              <div class="project-title">TU Dortmund Slide</div>
             </div>
           </div>
           
@@ -776,18 +758,6 @@
               </div>
               <div class="project-title">Pedestrian Bridge Over The Nile</div>
             </div>
-            
-            <!-- Renovation of the International Park -->
-            <div class="project-item" 
-                 data-title="Renovation of the International Park" 
-                 data-description="Landscape renovation project for the International Park." 
-                 data-link="https://drive.google.com/file/d/1KcanhuMZgeDr8_OG7T8qcpHErjt2rbOL/view"
-                 id="renovation-of-the-international-park">
-              <div class="pdf-preview-container ratio-3-4-landscape">
-                <iframe src="https://drive.google.com/file/d/1KcanhuMZgeDr8_OG7T8qcpHErjt2rbOL/preview" frameborder="0" allowfullscreen></iframe>
-              </div>
-              <div class="project-title">Renovation of the International Park</div>
-            </div>
           </div>
         </div>  
       </div>  
@@ -812,7 +782,7 @@
           <a href="https://wa.me/201234567890" class="text-green-600 hover:underline" target="_blank">WhatsApp Me</a>  
         </p>  
       </div>  
-    </section> 
+    </section>
     
     <!-- Footer -->  
     <footer class="bg-blue-50 text-center py-4 mt-10 text-sm text-gray-700">  
