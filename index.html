@@ -119,6 +119,12 @@
       padding-bottom: 200%; /* 1:2 portrait ratio (height is 2x width) */
       height: 0;
     }
+    .ratio-1-3-portrait {
+      padding-bottom: 300%; /* 1:3 portrait ratio */
+    }
+    .ratio-2-3-landscape {
+      padding-bottom: 66.66%; /* 2:3 landscape ratio */
+    }
     .ratio-3-4-portrait {
       padding-bottom: 133.33%; /* 3:4 portrait ratio */
     }
@@ -344,7 +350,7 @@
           <img src="Vacation House 3.jpg" alt="Vacation House">
         </div>
         
-        <!-- Bakht Hotel - Now tall portrait -->
+        <!-- Bakht Hotel - Now clickable -->
         <div class="gallery-item-tall" 
              data-title="Bakht Hotel" 
              data-project="Architectural Projects"
@@ -374,7 +380,7 @@
           <img src="Amina Hakim.png" alt="Amina Hakim Residence">
         </div>
         
-        <!-- TU Dortmund Slide - Now linked to project -->
+        <!-- TU Dortmund Slide - Now clickable -->
         <div class="gallery-item-tall" 
              data-title="TU Dortmund Slide" 
              data-project="Architectural Projects"
@@ -385,7 +391,8 @@
         <!-- Blender Clock - Just a photo in gallery -->
         <div class="gallery-item" 
              data-title="Blender Clock" 
-             data-project="Architectural Projects">
+             data-project="Architectural Projects"
+             data-target="clock-design">
           <img src="Blender Clock.png" alt="Blender Clock">
         </div>
         
@@ -502,7 +509,7 @@
               <div class="project-title">Vacation House</div>
             </div>
             
-            <!-- Bakht Hotel - Changed to 3:4 portrait -->
+            <!-- Bakht Hotel -->
             <div class="project-item" 
                  data-title="Bakht Hotel" 
                  data-description="Contemporary hotel design with innovative spatial organization and luxurious amenities." 
@@ -560,16 +567,35 @@
               <div class="project-title">Mixed Use Tower</div>
             </div>
             
-            <!-- TU Dortmund Slide -->
-            <div class="project-item" 
-                 data-title="TU Dortmund Tube Slide Alternative Design" 
-                 data-description="Alternative design for the TU Dortmund tube slide." 
-                 data-image="tu-dortmund-slide.jpg"
-                 id="tu-dortmund-slide">
-              <div class="pdf-preview-container ratio-1-2-portrait">
-                <img src="tu-dortmund-slide.jpg" alt="TU Dortmund Tube Slide Alternative Design">
+            <!-- TU Dortmund Slide and Clock in one row -->
+            <div class="phases-container">
+              <!-- TU Dortmund Slide - 1/3 width -->
+              <div class="phase-item" style="flex: 1;">
+                <div class="project-item" 
+                     data-title="TU Dortmund Tube Slide Alternative Design" 
+                     data-description="Alternative design for the TU Dortmund tube slide." 
+                     data-image="tu-dortmund-slide.jpg"
+                     id="tu-dortmund-slide">
+                  <div class="pdf-preview-container ratio-1-3-portrait">
+                    <img src="tu-dortmund-slide.jpg" alt="TU Dortmund Tube Slide Alternative Design">
+                  </div>
+                  <div class="project-title">TU Dortmund Slide</div>
+                </div>
               </div>
-              <div class="project-title">TU Dortmund Slide</div>
+              
+              <!-- Clock Design - 2/3 width -->
+              <div class="phase-item" style="flex: 2;">
+                <div class="project-item" 
+                     data-title="Clock Design" 
+                     data-description="3D model of a modern clock design created in Blender." 
+                     data-link="https://www.turbosquid.com/3d-models/clock-1985222"
+                     id="clock-design">
+                  <div class="pdf-preview-container ratio-2-3-landscape">
+                    <img src="Blender Clock.png" alt="Clock Design">
+                  </div>
+                  <div class="project-title">Clock Design</div>
+                </div>
+              </div>
             </div>
           </div>
           
@@ -763,7 +789,7 @@
       </div>  
     </div>  
   </div>  
-</section>  
+</section> 
 
     <!-- Contact Section -->  
     <section id="contact" class="py-12 px-4 max-w-4xl mx-auto">  
