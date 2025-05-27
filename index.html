@@ -1014,7 +1014,7 @@
     });
 
     // Gallery item click to scroll to project and highlight
-    const galleryItems = document.querySelectorAll('.gallery-item');
+    const galleryItems = document.querySelectorAll('.gallery-item, .gallery-item-tall');
     galleryItems.forEach(item => {
       item.addEventListener('click', function() {
         const targetId = this.getAttribute('data-target');
