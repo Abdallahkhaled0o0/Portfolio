@@ -119,6 +119,9 @@
       padding-bottom: 200%; /* 1:2 portrait ratio (height is 2x width) */
       height: 0;
     }
+    .ratio-3-4-portrait {
+      padding-bottom: 133.33%; /* 3:4 portrait ratio */
+    }
     .ratio-3-4-landscape {
       padding-bottom: 75%; /* 3:4 landscape ratio */
     }
@@ -177,6 +180,16 @@
       height: 200px;
       object-fit: cover;
       display: block;
+    }
+    
+    /* Special gallery item for TU Dortmund slide */
+    .gallery-item-tall {
+      grid-row: span 2;
+      height: auto;
+    }
+    
+    .gallery-item-tall img {
+      height: 416px; /* 200px * 2 + 16px gap */
     }
     
     .gallery-collapsed {
@@ -359,8 +372,8 @@
           <img src="Amina Hakim.png" alt="Amina Hakim Residence">
         </div>
         
-        <!-- TU Dortmund Slide -->
-        <div class="gallery-item" 
+        <!-- TU Dortmund Slide - Now spans two rows -->
+        <div class="gallery-item-tall" 
              data-title="TU Dortmund Slide" 
              data-project="Architectural Projects"
              data-target="tu-dortmund-slide">
@@ -374,12 +387,30 @@
           <img src="Blender Clock.png" alt="Blender Clock">
         </div>
         
-        <!-- Creative Hand Village -->
+        <!-- Creative Hand Village - Added more images -->
         <div class="gallery-item" 
              data-title="Creative Hand Village" 
              data-project="Urban Projects"
              data-target="creative-hand-village">
           <img src="images/urban_design.jpg" alt="Creative Hand Village">
+        </div>
+        <div class="gallery-item" 
+             data-title="Creative Hand Village" 
+             data-project="Urban Projects"
+             data-target="creative-hand-village">
+          <img src="images/urban_design2.jpg" alt="Creative Hand Village">
+        </div>
+        <div class="gallery-item" 
+             data-title="Creative Hand Village" 
+             data-project="Urban Projects"
+             data-target="creative-hand-village">
+          <img src="images/urban_design3.jpg" alt="Creative Hand Village">
+        </div>
+        <div class="gallery-item" 
+             data-title="Creative Hand Village" 
+             data-project="Urban Projects"
+             data-target="creative-hand-village">
+          <img src="images/urban_design4.jpg" alt="Creative Hand Village">
         </div>
         
         <!-- Rush City -->
@@ -477,13 +508,13 @@
               <div class="project-title">Vacation House</div>
             </div>
             
-            <!-- Bakht Hotel -->
+            <!-- Bakht Hotel - Changed to 3:4 portrait -->
             <div class="project-item" 
                  data-title="Bakht Hotel" 
                  data-description="Contemporary hotel design with innovative spatial organization and luxurious amenities." 
                  data-image="Backt Hotel.jpg"
                  id="bakht-hotel">
-              <div class="pdf-preview-container ratio-1-2-portrait">
+              <div class="pdf-preview-container ratio-3-4-portrait">
                 <img src="Backt Hotel.jpg" alt="Bakht Hotel">
               </div>
               <div class="project-title">Bakht Hotel</div>
@@ -762,7 +793,7 @@
       </div>  
     </div>  
   </div>  
-</section>  
+</section>
 
     <!-- Contact Section -->  
     <section id="contact" class="py-12 px-4 max-w-4xl mx-auto">  
