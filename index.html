@@ -363,6 +363,48 @@
              data-target="rush-city">
           <img src="images/rush_city.jpg" alt="Rush City">
         </div>
+        <!-- New gallery items -->
+        <div class="gallery-item" 
+             data-title="Ahmed Residence" 
+             data-project="Architectural Projects"
+             data-target="ahmed-residence">
+          <img src="Ahmed-1+0.jpg" alt="Ahmed Residence">
+        </div>
+        <div class="gallery-item" 
+             data-title="Ahmed Residence" 
+             data-project="Architectural Projects"
+             data-target="ahmed-residence">
+          <img src="Ahmed1+2.jpg" alt="Ahmed Residence">
+        </div>
+        <div class="gallery-item" 
+             data-title="Amina Hakim Residence" 
+             data-project="Architectural Projects"
+             data-target="amina-hakim-residence">
+          <img src="Amina Hakim.png" alt="Amina Hakim Residence">
+        </div>
+        <div class="gallery-item" 
+             data-title="Backt Hotel" 
+             data-project="Architectural Projects"
+             data-target="backt-hotel">
+          <img src="Backt Hotel.jpg" alt="Backt Hotel">
+        </div>
+        <div class="gallery-item" 
+             data-title="Blender Villa" 
+             data-project="Architectural Projects"
+             data-target="blender-villa">
+          <img src="Blender Villa exterior 1.png" alt="Blender Villa">
+        </div>
+        <div class="gallery-item" 
+             data-title="Vacation House" 
+             data-project="Architectural Projects"
+             data-target="vacation-house">
+          <img src="Vacation House 1.jpg" alt="Vacation House">
+        </div>
+        <div class="gallery-item" 
+             data-title="Blender Clock" 
+             data-project="Architectural Projects">
+          <img src="Blender Clock.png" alt="Blender Clock">
+        </div>
       </div>
     </div>
     
@@ -441,6 +483,76 @@
                 <img src="tu-dortmund-slide.jpg" alt="TU Dortmund Tube Slide Alternative Design">
               </div>
               <div class="project-title">TU Dortmund Tube Slide Alternative Design</div>
+            </div>
+
+            <!-- Ahmed Residence -->
+            <div class="project-item" 
+                 data-title="Ahmed Residence" 
+                 data-description="Modern residential design for Ahmed family with spacious interiors and contemporary facade." 
+                 data-image="Ahmed-1+0.jpg"
+                 data-image2="Ahmed1+2.jpg"
+                 id="ahmed-residence">
+              <div class="phases-container">
+                <div class="phase-item">
+                  <div class="pdf-preview-container ratio-3-4-landscape">
+                    <img src="Ahmed-1+0.jpg" alt="Ahmed Residence Front View">
+                  </div>
+                </div>
+                <div class="phase-item">
+                  <div class="pdf-preview-container ratio-3-4-landscape">
+                    <img src="Ahmed1+2.jpg" alt="Ahmed Residence Side View">
+                  </div>
+                </div>
+              </div>
+              <div class="project-title">Ahmed Residence</div>
+            </div>
+
+            <!-- Amina Hakim Residence -->
+            <div class="project-item" 
+                 data-title="Amina Hakim Residence" 
+                 data-description="Elegant residential design blending modern and traditional elements for the Hakim family." 
+                 data-image="Amina Hakim.png"
+                 id="amina-hakim-residence">
+              <div class="pdf-preview-container ratio-3-4-landscape">
+                <img src="Amina Hakim.png" alt="Amina Hakim Residence">
+              </div>
+              <div class="project-title">Amina Hakim Residence</div>
+            </div>
+
+            <!-- Backt Hotel -->
+            <div class="project-item" 
+                 data-title="Backt Hotel" 
+                 data-description="Contemporary hotel design with innovative spatial organization and luxurious amenities." 
+                 data-image="Backt Hotel.jpg"
+                 id="backt-hotel">
+              <div class="pdf-preview-container ratio-3-4-landscape">
+                <img src="Backt Hotel.jpg" alt="Backt Hotel">
+              </div>
+              <div class="project-title">Backt Hotel</div>
+            </div>
+
+            <!-- Blender Villa -->
+            <div class="project-item" 
+                 data-title="Blender Villa" 
+                 data-description="Modern villa design with clean lines, large windows, and seamless indoor-outdoor connection." 
+                 data-image="Blender Villa exterior 1.png"
+                 id="blender-villa">
+              <div class="pdf-preview-container ratio-3-4-landscape">
+                <img src="Blender Villa exterior 1.png" alt="Blender Villa">
+              </div>
+              <div class="project-title">Blender Villa</div>
+            </div>
+
+            <!-- Vacation House -->
+            <div class="project-item" 
+                 data-title="Vacation House" 
+                 data-description="Coastal vacation home design with panoramic views and relaxed living spaces." 
+                 data-image="Vacation House 1.jpg"
+                 id="vacation-house">
+              <div class="pdf-preview-container ratio-3-4-landscape">
+                <img src="Vacation House 1.jpg" alt="Vacation House">
+              </div>
+              <div class="project-title">Vacation House</div>
             </div>
           </div>
           
@@ -693,6 +805,7 @@
         const title = this.getAttribute('data-title');
         const description = this.getAttribute('data-description');
         const image = this.getAttribute('data-image');
+        const image2 = this.getAttribute('data-image2');
         const link = this.getAttribute('data-link');
         const link2 = this.getAttribute('data-link2');
         
@@ -724,7 +837,49 @@
         }
         
         if (image) {
-          content += `<img src="${image}" alt="${title}" class="w-full max-h-72 object-contain mb-4 rounded">`;
+          if (title === "Ahmed Residence" && image2) {
+            content += `
+              <div class="flex gap-4 mb-4">
+                <img src="${image}" alt="${title} View 1" class="w-1/2 h-auto object-contain rounded">
+                <img src="${image2}" alt="${title} View 2" class="w-1/2 h-auto object-contain rounded">
+              </div>
+            `;
+          } else if (title === "Blender Villa") {
+            content += `
+              <div class="mb-4">
+                <img src="${image}" alt="${title} Main View" class="w-full h-auto object-contain rounded">
+              </div>
+              <div class="grid grid-cols-2 gap-4 mb-4">
+                <img src="Blender Villa exterior 2.png" alt="${title} Exterior 2" class="w-full h-auto object-contain rounded">
+                <img src="Blender Villa exterior 3.png" alt="${title} Exterior 3" class="w-full h-auto object-contain rounded">
+                <img src="Blender Villa interior 1.png" alt="${title} Interior 1" class="w-full h-auto object-contain rounded">
+                <img src="Blender Villa interior 2.png" alt="${title} Interior 2" class="w-full h-auto object-contain rounded">
+                <img src="Blender Villa interior 3.png" alt="${title} Interior 3" class="w-full h-auto object-contain rounded">
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                <img src="Blender Villa landscape 1.png" alt="${title} Landscape 1" class="w-full h-auto object-contain rounded">
+                <img src="Blender Villa landscape 2.png" alt="${title} Landscape 2" class="w-full h-auto object-contain rounded">
+                <img src="Blender Villa landscape 3.png" alt="${title} Landscape 3" class="w-full h-auto object-contain rounded">
+                <img src="Blender Villa landscape 4.png" alt="${title} Landscape 4" class="w-full h-auto object-contain rounded">
+                <img src="Blender Villa landscape 5.png" alt="${title} Landscape 5" class="w-full h-auto object-contain rounded">
+                <img src="Blender Villa landscape 6.png" alt="${title} Landscape 6" class="w-full h-auto object-contain rounded">
+                <img src="Blender Villa landscape 7.png" alt="${title} Landscape 7" class="w-full h-auto object-contain rounded">
+              </div>
+            `;
+          } else if (title === "Vacation House") {
+            content += `
+              <div class="mb-4">
+                <img src="${image}" alt="${title} Main View" class="w-full h-auto object-contain rounded">
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                <img src="Vacation House 2.jpg" alt="${title} View 2" class="w-full h-auto object-contain rounded">
+                <img src="Vacation House 3.jpg" alt="${title} View 3" class="w-full h-auto object-contain rounded">
+                <img src="Vacation House 4.jpg" alt="${title} View 4" class="w-full h-auto object-contain rounded">
+              </div>
+            `;
+          } else {
+            content += `<img src="${image}" alt="${title}" class="w-full max-h-72 object-contain mb-4 rounded">`;
+          }
         }
         
         if (link && title !== "Heliopolis Transformation") {
@@ -829,6 +984,8 @@
     galleryItems.forEach(item => {
       item.addEventListener('click', function() {
         const targetId = this.getAttribute('data-target');
+        if (!targetId) return; // Skip if no target (like Blender Clock)
+        
         const targetElement = document.getElementById(targetId);
         
         if (targetElement) {
